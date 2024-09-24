@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 
-from tp2.ej5.ej5 import sigma_2_pred
 
 # Cargar el dataset
 df = pd.read_csv('../players_21.csv')
@@ -84,10 +83,40 @@ print(f"t: {t:.3f}")
 print(f"Error estándar: {se_beta_1:.3f}")
 print(f"Grados de libertad: {gl}")
 
-IC = [
-    (beta_1 - t * se_beta_1),
-    (beta_1 + t * se_beta_1),
+IC_beta_1 = [
+    beta_1 - t * se_beta_1,
+    beta_1 + t * se_beta_1,
 ]
 
-print(f"IC: {IC}")
+IC_beta_0 = [
+    beta_0 - t * np.sqrt(sigma_cuad * (1/n + (np.mean(x)**2/s_xx)) ),
+    beta_0 + t * np.sqrt(sigma_cuad * (1/n + (np.mean(x)**2/s_xx)) )
+]
 
+print(f"Intervalo de Confianza para Beta1: {IC_beta_1}")
+print(f"Intevalo de Confianza para Beta0: {IC_beta_0}")
+
+# INCISO 3
+nueva_x = np.mean(x)
+nueva_y = beta_0 + beta_1 * nueva_x
+
+
+IC_respuesta_media = [
+    beta_0 + beta_1 * nueva_x - t * np.sqrt(sigma_cuad * (1 / n + ((nueva_x - np.mean(x)) ** 2 / s_xx))),
+    beta_0 + beta_1 * nueva_x + t * np.sqrt(sigma_cuad * (1 / n + ((nueva_x - np.mean(x)) ** 2 / s_xx)))
+]
+ancho_IC_respuesta_media = IC_respuesta_media[1] - IC_respuesta_media[0]
+
+IP = [
+    nueva_y - t * np.sqrt(sigma_cuad * (1 + (1/n) + (((nueva_x - np.mean(x)) ** 2)/s_xx))),
+    nueva_y + t * np.sqrt(sigma_cuad * (1 + (1/n) + (((nueva_x - np.mean(x)) ** 2)/s_xx)))
+]
+ancho_IP = IP[1] - IP[0]
+
+
+print(f"INCISO 3")
+print(f"INTERVALO DE CONFIANZA DE RESPUESTA MEDIA: {IC_respuesta_media}")
+print(f"ANCHO: {ancho_IC_respuesta_media}")
+print(f"INTERVALO DE PREDICIÓN: {IP}")
+print(f"ANCHO: {ancho_IP}")
+print(f"Proporción de veces que supera la incertidumbre de la predicción de la calidad a la de respuesta media de calidad para una característica fija, siendo ambas de la misma confianza y ancho mínimo: {ancho_IP/ancho_IC_respuesta_media}")
