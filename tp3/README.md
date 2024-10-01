@@ -2,15 +2,68 @@
 
 ## 1. Probar que no hay enteros simultáneamente pares e impares.
 
+- Sea $ a \in \Z $ múltiplo de $ b $ tal que $ b \in \Z $, si $ \exists c \in \Z : a = b*c $.
+- Sea $ x \in \Z $ un número par si es múltiplo de 2.
+  - Es decir que $ \exists c \in \Z : x = 2*c $.
+  - Si no se cumple, x sería impar $ \nexists c \in \Z : x = 2*c $.
+- Entonces, decimos que $ \exists n \in \Z : n es par e impar $.
+  - n es par $ \to \exists c \in \Z : n = 2*c $
+  - n es impar $ \to \nexists c \in \Z : n = 2*c $
+- Llegamos a un absurdo, ya que no es posible que un número $ n \in \Z $ sea par y a la vez impar.
+- Por lo tanto $ \nexists n \in \Z : n$ es par e impar. 
+
 ## 2. Analizar si las siguientes afirmaciones son verdaderas o falsas:
 
-### (a) Si a|1 entonces a = 1 o a = −1
+### (a) Si $ a|1 $ entonces $ a = 1 $ o $ a = −1 $
 
-### (b) a|b y b|c entonces a|c
+- $ a|1 $ si $ \exists c \in \Z : 1 = a*c$
+- Si $ a = -1 \to -1|1 $ entonces $ \exists d \in \Z : 1 = -1 * d $
+- Si $ a = 1 \to 1|1 $ entonces $ \exists c \in \Z : 1 = 1 * c $
 
-### (c) a(a − 1) es par
+Como $ \exists c \in \Z : 1 = a*c $.
+- Entonces $ -1|1 $ o $ 1|1 $.
+- También $ \exists d \in \Z:1=-1*d \lor \exists e \in \Z: 1=1*e $
+
+- Teniendo que $ 1 = -1 * d \to \frac{1}{-1} = d \to -1 = d $
+- Y teniendo que $ 1 = 1 * e \to \frac{1}{1} = e \to 1 = e $ 
+- Se demostró que $ \exists d = -1 \in \Z : 1 = (-1) * (-1) $ y que $ \exists e = 1 \in \Z : 1 = 1 * 1 $
+- Por lo tanto, si $ a|1 $ entonces $ a = 1 $ o $ a = -1 $
+- Conclusión: La afirmación es verdadera.
+
+### (b) $ a|b $ y $ b|c $ entonces $ a|c $
+
+- Se da que $ a|b $ si $ \exists d \in \Z : b = a*d $,  que $ b|c $ si $ \exists e \in \Z : c = b*e $ y se da que $ a|c $ si $ \exists f \in \Z : c = a*f $ (hay que demostrar eso último).
+
+Como $ \exists d \in \Z : b = a*d \land \exists e \in \Z : c = b*e $ entonces $ \exists f \in \Z : c = a*f $
+- $ b = a*d $ y $ c = b*e $
+- $ c = b*e = (a*d)*e = a * (d*e) = a * f $
+- Entonces, se cumple que $ \exists f \in \Z : c = a*f \to a|c $. Por lo tanto, la afirmación es verdadera.
+
+### (c) $ a(a − 1) $ es par
+Primero, tenemos que probar que la multiplicación de un número par por cualquier otro número entero nos da como resultado otro número par.
+
+- Si $ x $ es par, entonces $ \exists y \in \Z : x = 2*y $. Sea $ z \in \Z $.
+  - $ x*z $ es par si $ \exists f \in \Z : x * z = 2 * f $.
+  - $ x = 2*y $
+  - $ x*z = (2*y)*z = 2*(y*z) = 2*f $
+    - $ f = (y*z) \in \Z $
+- Entonces, se demuestra que $ \exists f \in \Z : x*z=2*f $.
+
+Para demostrar que $ a*(a-1) $ es par hay que considerar dos casos:
+- <u>$ a $ es par:</u>
+  - Si $ a $ es par, entonces $ \exists c \in \Z : a = 2*c $
+  - $ a*(a-1) = (2*c) * (2*c-1) $
+  - Cómo $ 2*c $ es par, $ (2c)*(2c-1) $ es par y entonces $ a*(a-1) $ es par.
+- <u>$ a $ es impar: </u>
+  - Si $ a $ es impar, entonces $ \nexists c \in \Z : a = 2 *c $
+  - No hay entero que haga valer la igualdad, entonces se intenta aproximar a $a$ por un múltiplo de 2, haciendo uso del resto (por ej. 1).
+  - Si $a$ es impar, entonces $ \exists c \in \Z : a = 2 *c+1 $
+  - $ a*(a-1) = (2*c+1)*(2*c+1-1)=(2*c+1)(2*c) $
+  - Cómo $2c$ es par (explicado arriba), $ (2*c+1)*(2*c) $ es par y por lo tanto $ a*(a-1) $ es par. Por lo tanto, la afimración es verdadera. 
 
 ### (d) x|y y y|z entonces x|yz
+
+
 
 ## 3. Si a un número se lo divide por 5, el resto es 3 y si se lo divide por 7, el resto es 4. ¿Cuál es el resto si se lo divide por 35?
 
