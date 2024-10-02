@@ -61,37 +61,190 @@ Para demostrar que $ a*(a-1) $ es par hay que considerar dos casos:
   - $ a*(a-1) = (2*c+1)*(2*c+1-1)=(2*c+1)(2*c) $
   - Cómo $2c$ es par (explicado arriba), $ (2*c+1)*(2*c) $ es par y por lo tanto $ a*(a-1) $ es par. Por lo tanto, la afimración es verdadera. 
 
-### (d) x|y y y|z entonces x|yz
+### (d) $ x|y $ y $ y|z $ entonces $ x|yz $
 
-
+- Teniendo que $ x|y $ entonces $ \exists a \in \Z : y = x*a $.
+- Teniendo que $ y|z $ entonces $ \exists b \in \Z : z = y*b $
+- Y teniendo que $ x|yz $ entonces $ \exists c \in \Z : yz = x*c $
+- Como $ \exists a \in \Z : y = x*a $ y $ \exists b \in \Z : z = y*b $ entonces $ \exists c \in \Z : yz = x*c $
+  - $ y = x*a $
+  - $ z = y*b $
+  - $ yz = (x*a) * (y*b) = x * (a * y * b) = x * c$
+    - $ c = a*y*b \in \Z $
+- Por lo tanto $ \exists c \in \Z : yz = x*c \to x|yz $
 
 ## 3. Si a un número se lo divide por 5, el resto es 3 y si se lo divide por 7, el resto es 4. ¿Cuál es el resto si se lo divide por 35?
 
-## 4. Sean a y b dos números enteros que tienen restos 4 y 7 respectivamente en la división por 11. Hallar los restos de la división por 11 de (a + b2)
+- $ n = 5*c_1+3 $
+- $ n = 7*c_2+4 $
+- $ n = 35*c + r \to $ Hay que ver cuál es ese r cuando se divide a nuetro n por 35.
+
+Armamos un sistema de ecuaciones donde multiplicamos cada ecuación para obtener $ 35c_i $ en la igualdad de cada ecuación.
+
+$$
+\begin{cases}
+7*n = 7*5*c_1 + 3*7 = 35*c_1 + 21 \\
+5*n = 5*7*c_2 + 4*5 = 35*c_2 + 20
+\end{cases}
+$$
+
+Multiplico ambas ecuaciones para que la resta entre ambas nos deje solo con n.
+
+$$
+\begin{cases}
+3*(7*n) = 3 * 35 * c_1 + 21 * 3 \to 21*n = 35*(3*c_1) + 63 \\
+4*(5*n) = 4 * 35 * c_2 + 20 * 4 \to 20*n = 35*(4*c_2) + 80
+\end{cases}
+$$
+
+Hacemos la diferencia entre ambas ecuaciones.
+
+$$
+((21*n) = 35 * (3*c_1) + 63) - ((20*n) = 35 * (4*c_2) + 80) \to n = 35*(3*c_1 + 4*c_2) - 17
+$$
+
+- Podemos decir que $ (3*c_1 + 4*c_2) = c_3 \in \Z $ y nos queda: $ n = 35*c_3 - 17 $
+
+Hasta el momento esto es erróneo, ya que no es correcto que el resto sea negativo (debe ser $ 0 \le r \le |35| $). Reescribimos la ecuación sumando y restando 35 a la ecuación.
+
+$$
+n = 35*(3*c_1 + 4*c_2) - 17 + 35 - 35 \to n = 35*(3*c_1 + 4*c_2) -35 + 18
+$$
+
+- Factor común de $ 35c_3 - 35 $
+
+$$
+n = 35*(c_3-1)+18
+$$
+
+- Cómo $ c = (c_3 - 1) \in \Z $
+
+$$
+n = 35*c+18
+$$
+
+Por lo tanto, el resto de 35|n es 18.
+
+## 4. Sean a y b dos números enteros que tienen restos 4 y 7 respectivamente en la división por 11. Hallar los restos de la división por 11 de (a + b²)
+
+- $ 11|a \to a = 11 * c_1 + 4 $
+- $ 11|b \to b = 11 * c_2 + 7 $
+- $ (a+b²) = 11 * c + r $
+
+En la ecuación de $ (a+b²) $ reemplazamos las fórmulas de $ a $ y de $ b $.
+
+$$
+(a+b²) = (11*c_1+4) + (11*c_2+7)² 
+$$
+
+- Binómio al cuadrado:
+
+$$
+11*c_1 + 4 + (11*c_2)² + 2+11*c_2+7 + 7² = (11*c_1 + 11*c_2 * 11*c_2 + 2 * 11_c2 * 7) + 53 = 11 * (c_1 + c_2² + 14*c_2) + 53
+$$
+
+- Podemos decir que $ (c_1 + c_2² + 14*c_2) = c_3 \in \Z $. Nos quedaría:
+
+$$
+(a+b²) = 11 * c_3 + 53
+$$
+
+Hasta el momento esto es erróneo, ya que no es correcto que el resto sea mayor que el divisor (debe ser $ 0 \le r \le |11| $). Para obtener un valor válido, debemos reescribir la ecuación.
+- Podemos escribir a 49 como $ 11+11+11+11+9 $
+
+$$
+(a+b²) = 11 * c_3 + 11 + 11 + 11 + 11 + 9
+$$
+
+- Factor común en $ 11 * c_3 + 11 + 11 + 11 + 11 $
+
+$$
+(a+b²) = 11 * (c_3 + 4) + 9
+$$
+
+- Cómo $ (c_3 + 4) = c \in \Z $, entonces:
+
+$$
+(a+b²) = 11 * c + 9
+$$
+
+Entonces, llegamos a que el resto de $ 11|(a+b²) $ es 9.
 
 ## 5. Convertir los siguientes números de base 10 a base 8:
 
 ### (a) 98
 
+- $ 98|8 \to 98 = 8*12+2 $
+- $ 12|8 \to 12 = 8*1+4 $
+- $ 1|8 \to 1 = 8*0+1 $
+
+- 98 en base 8 es 142
+
 ### (b) 44
+
+- $ 44|8 \to 44 = 8*5+4 $
+- $ 5|8 \to 5 = 8*0+5 $
+
+- 44 en base 8 es 54
 
 ### (c) 20
 
+- $ 20|8 \to 20 = 8*2+4 $
+- $ 2|8 \to 2 = 8*0+2 $
+
+- 20 en base 8 es 24.
+
 ## 6. Calcular el máximo común divisor entre:
 
-### (i) (16, 24) 
+### (i) (16, 24)
 
-### (ii) (70, 50) 
+Descomponemos cada entero en producto de primos y buscamos los factores que tienen en común.
 
-### (iii) (121, 88) 
+- $ 16 = 2 * 2 * 2 * 2 $
+- $ 24 = 2 * 2 * 2 * 3 $
+- El mayor factor común y máximo común divisor entre 16 y 24 es $ 2*2*2 = 2³ = 8 $.
 
-### (iv) (−90, 90) 
+### (ii) (70, 50)
+
+- $ 70 = 2 * 5 * 7 $
+- $ 50 = 2 * 5 * 5 $
+- El mayor factor común y máximo común divisor entre 70 y 50 es $ 2*5 = 10 $
+
+### (iii) (121, 88)
+
+- $ 121 = 11 * 11 $
+- $ 88 = 11 * 2 * 2 * 2 $
+- El mayor factor común y máximo común divisor entre 121 y 88 es 11.
+
+### (iv) (−90, 90)
+
+- Cómo el 90 es divisor de -90 (y de sí mismo), el MCD entre ambos es 90. 
 
 ### (v) (980, 224)
+
+- $ 980 = 2 * 2 * 5 * 7 * 7 $
+- $ 224 = 2 * 2 * 2 * 2 * 2 * 7  $
+- El mayor factor común y MCD entre 980 y 224 es $ 2 * 2 * 7 = 28 $
 
 ## 7. Probar que si a y b son enteros:
 
 ### (a) a + b es coprimo con a
+
+Queremos probar que $ (a+b,a) = 1 $. Es decir que el MCD entre $ (a+b) $ y $ a $ es 1.
+- Por definición de MCD, $ (a+b,a) = d $ cumple:
+  - $ d|a+b $, o sea, $ \exists m_1 \in \Z : a+b = d*m_1 $
+  - $ d|a $, es decir, $ \exists m_2 \in \Z : a = d*m_2 $
+- Como $ a+b = d*m_1 $, restando $ a $ a ambos lados de la ecuación nos queda:
+
+$$
+b = d * m_1 - a = d * m_1 - d * m_2 = d * (m_1 - m_2)
+$$
+
+- Podemos decir que $ m_1 - m_2 = c \in \Z$
+  - $ b = d * c $
+- Lo que implica que $ d|b $
+- Si $ d|a + b $ y $ d|a $, entonces $ d|b $ y $ d|a $ entonces $ d|(a,b) $
+- Por el enunciado, sabemos que $ (a,b) = 1 $, por lo tanto, debería ser que $ d = 1 $, entonces $ (a+b,a) = 1 $, o sea, llegamos a que $ a+b $ es coprimo con $ a $.
 
 ### (b) si a es no nulo, (a, 0) = |a|
 
