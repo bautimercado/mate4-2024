@@ -408,23 +408,100 @@ $$
 
 ### a) $ \sqrt{-49} $
 
+$$
+\sqrt{-49} = \sqrt{49} * \sqrt{-1} = 7 * \sqrt{-1} = 7*i = 0 + 7i
+$$
+
+- $ Re(z) = 0 $
+- $ Im(z) = 7 $
+
 ### b) $ \sqrt{-20} $
 
-### c) $ \sqrt{-\frac{9}{16}} $ 
+$$
+\sqrt{-20} = \sqrt{5} * \sqrt{4} * \sqrt{-1} = 2*\sqrt{5}*i = 0 + 2\sqrt{5}i
+$$
+
+- $ Re(z) = 0 $
+- $ Im(z) = 2\sqrt{5} $
+
+### c) $ \sqrt{-\frac{9}{16}} $
+
+$$
+\sqrt{-\frac{9}{16}} = \sqrt{\frac{9}{16}} * \sqrt{-1} = \frac{3}{4} * \sqrt{-1} = 0 + \frac{3}{4}i
+$$
+
+- $ Re(z) = 0 $
+- $ Im(z) = \frac{3}{4} $
 
 ### d) $ z = −8 $
 
+$$
+z = -8 = -8 + 0i
+$$
+
+- $ Re(z) = -8 $
+- $ Im(z) = 0 $
+
 ### e) $ z = 7i $
+
+$$
+z = 7i = 0 + 7i
+$$
+
+- $ Re(z) = 0 $
+- $ Im(z) = 7 $
 
 ### f) $ z = (3 + i) + (5 − 4i) $
 
+$$
+z = (3+i)+(5-4i) = 8-3i
+$$
+
+- $ Re(z) = 8 $
+- $ Im(z) = -3 $
+
 ### g) $ z = 3i − (5 − 2i) $
+
+$$
+z = 3i - (5-2i) = -5 +5i
+$$
+
+- $ Re(z) = -5 $
+- $ Im(z) = 5 $
 
 ### h) $ \frac{1+3i}{3−i} $ 
 
+$$
+\frac{1+3i}{3−i} = \frac{1+3i}{3−i} * \frac{3+i}{3+i} = \frac{(1+3i)*(3+i)}{(3-i)*(3+i)} = \frac{3+i+9i+3i²}{9+3i-3i-i²} = \frac{3+10i+3i²}{9-i²} 
+$$
+
+- Por definición de $ i² = -1 $
+
+$$
+\frac{3+10i+3*(-1)}{9-(-1)} = \frac{10i}{10} = i
+$$
+
+- $ Re(z) = 0 $
+- $ Im(z) = 1 $
+
 ### i) $ \frac{1−i}{(1+i)²} $
 
-## 14. La suma de un n´umero complejo y su conjugado es −8 y la suma de sus m´odulos es 10. De qu´e n´umeros complejos se trata?
+$$
+\frac{1-i}{(1+i)²} = \frac{1-i}{1²+2*1*i+i²}
+$$
+
+- Por definición $ i² = -1 $
+
+$$
+\frac{1-i}{2i} = \frac{1-i}{2i} * \frac{-2i}{-2i} = \frac{(1-i)*(-2i)}{-4i²} = \frac{-2i+2i²}{4} = \\ \frac{-2i-2}{4} = -\frac{2}{4}i-\frac{2}{4} = -\frac{1}{2}i-\frac{1}{2}
+$$
+
+- $ Re(z) = -\frac{1}{2} $
+- $ Im(z) = -\frac{1}{2} $
+
+## 14. La suma de un número complejo y su conjugado es −8 y la suma de sus módulos es 10. De qué números complejos se trata?
+
+
 
 ## 15. Hallar, si existe, x real tal que Re(z) = Im(z) siendo z = x+2i 4−3i
 
