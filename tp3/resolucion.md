@@ -302,7 +302,47 @@ Por lo tanto, $ 5k+3 $ y $ 3k+2 $ son coprimos.
 
 ## 9. Sean a, b ∈ Z y sea p primo. Demostrar que si p|ab entonces p|a o p|b. Mostrar que esto no se cumple si p no es primo.
 
+Teniendo que $ p|ab $ por definición de divisibilidad se cumple que $ \exists c \in Z: a * b = p * c $
+Lo mismo para $ p|a $ y $ p|b $
+- $ \exists d \in Z: a = p * d $
+- $ \exists e \in Z: b = p * e $
+Basandonos en el _Teorema Fundamental de la Aritmética_, siendo $ a $ y $ b $ distintos de 0, 1 y -1, son productos finito de números primos y la factorización es única salvo el orden:
+- $ a = \varPi^n_{i=1} p^{a^i}_i  $
+- $ b = \varPi^n_{j=1} q^{a^j}_j $
 
+Si $p$ no es uno de los factores primos en la factorización de $ a $ entonces $ (a,p) = 1 $.
+
+Con la Identidad de Bézout, sabemos que existen $ m, n \in \Z $ tales que: $ 1 = am+pn $
+
+Si multiplicamos por $ b $ en ambos lados obtenemos:
+
+$$
+b = a*b*m + p*n*b
+$$
+
+Por hipótesis, sabemos que $ a*b=p*c $, podemos reemplazar $ a*b $ en nuestra ecuación:
+
+$$
+b = p*c*m + p*n*b \to b = p*(c*m+n*b)
+$$
+
+Podemos decir que $ (c*m+n*b) = x \in \Z $, entonces:
+
+$$
+b = p*x
+$$
+
+Por lo tanto, se cumple que $ p|b $.
+Se demostró que si $ p|ab $ y $p$ no divide a $a$, entonces $p$ seguro divide a $b$.
+Trivialmente, podemos demostrar que si $p|ab$ y $p$ no divide a $b$, entonces seguro $p$ divide a $a$.
+
+Si $p$ no es primo, no se cumple.
+- Supongamos que $ p = 6 $, $ a = 2 $ y $ b = 3 $.
+- $ a*b=2*3=6 \to $ se cumple que $ 6|6 $ porque $ \exists c \in \Z : 6 = 6 * c \land c = 1 $
+- No se cumple que 6|2 ya que $ \nexists c \in \Z : 2=6*c $.
+- Tampoco se cumple que 6|3 ya que $ \nexists c \in \Z : 3=6*c $
+
+A través del contraejemplo, demostramos que si $ p $ no es primo, puede dividir a $ a*b $ pero no puede dividir a los factores por separado.
 
 ## 10. Hallar, si existe, un n´umero entero q tal que 7290q es el cubo de un entero.
 
