@@ -344,15 +344,69 @@ Si $p$ no es primo, no se cumple.
 
 A través del contraejemplo, demostramos que si $ p $ no es primo, puede dividir a $ a*b $ pero no puede dividir a los factores por separado.
 
-## 10. Hallar, si existe, un n´umero entero q tal que 7290q es el cubo de un entero.
+## 10. Hallar, si existe, un número entero $ q $ tal que $7290*q$ es el cubo de un entero.
 
-## 11. Demostrar que dados a y b en Q tales que a < b, existe otro n´umero racional x tal que a < x < b.
+El enunciado pide encontrar un $ q $ entero de manera tal que $ 7290 * q = x³ $
 
-## 12. Probar que no existe un n´umero racional cuyo cubo sea igual a 2.
+- Podemos reescribir a 7290 descomponiendolo en factores primos: $ 7290 = 2 * 3⁶ * 5 $
+- Para que $ 7290  * q = x³ $, los exponentes de la descomposición de 7290 en factores primos deben ser múltiplos de 3.
+  - Para 2 necesitamos elevarlo a la 2³, así que necesitamos 2²
+  - 3⁶ está bien porque es múltiplo de 3.
+  - Para el 5 pasa lo mismo que el 2, necesitamos 5².
+- Del enunciado tenemos $ 7290 * q $. Podemos interpretar a $ q $ como lo que planteamos antes (la necesidad de cada factor primo para tener un exponente múltiplo de 3).
+
+$$
+q = 2² * 5² = 100
+$$
+
+- Entonces $ q = 100 $ para que se de que $ 7290 * q = x³ $
+
+$$
+7290 * 100 = x³ \to \sqrt[3]{7290 * 100} = \sqrt[3]{x³} \to \sqrt[3]{(2*3⁶*5) * (2²*5²)} = \sqrt[3]{x³} \\
+ \sqrt[3]{2³*3⁶*5³} =  \sqrt[3]{x³} \to 2*3²*5 = x \to 90 = x \to x³ = 90³ = 729000
+$$
+
+## 11. Demostrar que dados $ a $ y $ b $ en $ Q $ tales que $ a < b $, existe otro número racional x tal que $ a < x < b $.
+
+El enunciado nos da $ a $ y $ b $, y nos dice que $ a < b $:
+- Sumando $ a $ a ambos lados de la desigualdad tenemos: $ a + a < b + a \to 2a < b+a $
+- De manera trivial si sumamos b a ambos lados: $ a+b < 2b $
+
+Ambas desigualdades poseen $ a+b $, juntandolas nos quedaría:
+
+$$
+2a < a+b < 2b
+$$
+
+- Aprovechando que tenemos $ 2a $ y $ 2b $, podemos multiplicar $ \frac{1}{2} $ a toda la expresión.
+
+$$
+\frac{2a}{2} < \frac{a+b}{2} < \frac{2b}{2} \to a < \frac{a+b}{2} < b
+$$
+
+- Encontramos al otro número racional $ x $, siendo $ x = \frac{a+b}{2} \land a < x < b $.
+
+## 12. Probar que no existe un número racional cuyo cubo sea igual a 2.
+
+Sea $ r = \frac{p}{q} $ con $ p \in \Z $, $ q \in \Z \land q \ne 0 $, siendo $ \frac{p}{q} $ el _representante canónico_ de r (fracción irreducible).
+
+- Si $ r³ = 2 $ entonces $ (\frac{p}{q}³) = 2 \to \frac{p³}{q³} = 2 $.
+- Despejando $ q³ $ quedaría: $ p³ = 2 * q³ $
+- Podemos ver que $ p³ $ es un número par (el cubo de un número impar es impar). Lo podemos ver como $ p = 2*c $ siendo $ c \in \Z $.
+- Sustituimos:
+$$
+(2c)³ = 2q³ \to 8c³ = 2q³
+$$
+- Despejamos al 2:
+$$
+4c³ = q³ \to 2*2*c³ = q³
+$$
+- Podemos ver que $ q³ $ es divisible por 2, entonces también es par y lo podemos escribir como $ q = 2*d $ siendo $ d \in \Z $.
+- $ p $ y $ q $ son pares, lo que se contradice con lo que dijimos al principio, que $ \frac{p}{q} $ no es una fracción irreducible. Entonces, llegamos a que no existe un número racional cuyo cubo sea igual a 2.
 
 ## 13. Indique la parte real Re(z) y la parte imaginaria Im(z) de los siguientes complejos:
 
-### a) $ \sqrt{-49} $ 
+### a) $ \sqrt{-49} $
 
 ### b) $ \sqrt{-20} $
 
