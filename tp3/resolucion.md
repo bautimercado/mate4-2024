@@ -248,11 +248,61 @@ $$
 
 ### (b) si a es no nulo, (a, 0) = |a|
 
+Tenemos que $ a, 0 \in \Z $ si $ a $ es no nulo. El enunciado dice que hay un $ d \in \Z$ tal que $ d $ es el MCD de $ a $ y $ 0 $ si $ d > 0 $.
+- Entonces $d|a$ y $d|0$
+- Si hubiera un $ c \in Z $ tal que $c|a$ y $c|0$ entonces $c|d$.
+
+El 0 es divisible por todos los enteros, entonces siempre se cumple que $ d|0 $, tenemos que buscar un $ d $ mayor a 0 de modo tal que $ d|a $ y que exista otro $ c $ tal que $ c|a $ y $ c|d $.
+Tenemos que encontrar un $ q $ tal que $ q \in \Z : a = d * q $.
+- Si $ a > 0, d = |a| $ y $ q = 1 $ se cumple que $ a = |a| * 1 $
+- Si $ a < 0, d = |a| $ y $ q = -1 $ se cumple que $ a = |a| * q $
+
+En ambos casos, el valor de $ d $ es $ |a| $. Esto es así porque para cualquier otro conjunto de valores de $ d $ y $ q $ no se cumple la igualdad $ a = d * q $ a la vez que se cumple la definción del MCD.
+- Necesariamente $ d = |a| $, por lo tanto, $ a $ es distinto de 0 y $ (a,0) = |a| $ es verdadero.
+
 ### (c) (a, b) = 1 entonces ma+nb=k, con m,n y k enteros.
+
+- Por el enunciado, sabemos que $ (a,b) = 1 $ y, que existen enteros $ m_1 $ y $ n_1 $, tal que: $ m_1a+n_1b = 1 $
+  - Esto es así por la Identidad de Bézout.
+- Multiplicamos $ k $ en ambos lados de la ecuación:
+  $$
+  k * m_1a + k * n_1b = 1k \to (km_1)a + (kn_2)b = k
+  $$
+- Como $ km_1 = m \in \Z $ y $ kn_2 = n \in \Z $, nos quedaría:
+  $$
+  ma + nb = k
+  $$
+- Se demostró que si $ (a,b) = 1 $ entonces $ ma+nb = k $. 
 
 ## 8. Hallar mcd(5k + 3, 3k + 2), para cualquier k entero
 
-## 9. Sean a, b ∈ Z y sea p primo. Demostrar que si p|ab entonces p|a ´o p|b Mostrar que ´esto no se cumple si p no es primo.
+Hay que encontrar un $ d \in \Z: d > 0 $ tal que, para cualquier k, se cumpla que:
+- $ d|5k+3 $, o sea, $ \exists c_1 \in Z : 5k + 3 = d * m_1 $
+- $ d|3k+2 $, o sea, $ \exists c_2 \in Z : 3k + 2 = d * m_2 $
+- Hay otro $ D $ tal que $ D|5k+3 $ y $ D|3k+2 $ entonces $D|d$
+
+Multiplicamos en ambos lados de las dos ecuaciones para lograr que los coeficientes k tengan el mismo valor para sacar el término k cuando las restemos.
+- $ 3*5k + 3*3 = 3*d*c_1 \to 15k + 9 = 3 * d * c_1 $
+- $ 5 * 3c_2 + 5*2 = 5*d*c_2 \to 15k + 10 = 5*d*c_2 $
+
+Restamos las ecuaciones:
+
+$$
+15k+9 = 3*d*c_1 - (15k + 10 = 5*d*c_2)
+$$
+
+- Resultado: $ -1 = (3*d*c_1 - 5*d*c_2) $
+- Podemos decir que $ (3*c_1 - 5*c_2) = c \in \Z $ y nos quedaría: $ -1 = d(3c_1-5_c2) \to -1 = d*c $
+
+Para que la igualdad sea válida $d = 1$ y $c=-1$ (o al reves). Con otros valores, la igualdad no se cumple
+Por la definción de MCD, $ d $ _tiene_ que ser positivo, por lo que si o si $ d = 1 $.
+Entonces, $ (5k+3,3k+2) = 1 $, para todo $ k $.
+Por lo tanto, $ 5k+3 $ y $ 3k+2 $ son coprimos.
+ 
+
+## 9. Sean a, b ∈ Z y sea p primo. Demostrar que si p|ab entonces p|a o p|b. Mostrar que esto no se cumple si p no es primo.
+
+
 
 ## 10. Hallar, si existe, un n´umero entero q tal que 7290q es el cubo de un entero.
 
