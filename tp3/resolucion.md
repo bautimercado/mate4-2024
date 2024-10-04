@@ -10,25 +10,17 @@
   - n es par $ \to \exists c \in \Z : n = 2*c $
   - n es impar $ \to \nexists c \in \Z : n = 2*c $
 - Llegamos a un absurdo, ya que no es posible que un número $ n \in \Z $ sea par y a la vez impar.
-- Por lo tanto $ \nexists n \in \Z : n$ es par e impar. 
+- Por lo tanto $ \nexists n \in \Z : n $ es par e impar. 
 
 ## 2. Analizar si las siguientes afirmaciones son verdaderas o falsas:
 
 ### (a) Si $ a|1 $ entonces $ a = 1 $ o $ a = −1 $
 
-- $ a|1 $ si $ \exists c \in \Z : 1 = a*c$
-- Si $ a = -1 \to -1|1 $ entonces $ \exists d \in \Z : 1 = -1 * d $
-- Si $ a = 1 \to 1|1 $ entonces $ \exists c \in \Z : 1 = 1 * c $
-
-Como $ \exists c \in \Z : 1 = a*c $.
-- Entonces $ -1|1 $ o $ 1|1 $.
-- También $ \exists d \in \Z:1=-1*d \lor \exists e \in \Z: 1=1*e $
-
-- Teniendo que $ 1 = -1 * d \to \frac{1}{-1} = d \to -1 = d $
-- Y teniendo que $ 1 = 1 * e \to \frac{1}{1} = e \to 1 = e $ 
-- Se demostró que $ \exists d = -1 \in \Z : 1 = (-1) * (-1) $ y que $ \exists e = 1 \in \Z : 1 = 1 * 1 $
-- Por lo tanto, si $ a|1 $ entonces $ a = 1 $ o $ a = -1 $
-- Conclusión: La afirmación es verdadera.
+- $ a|1 $ si $ \exists c \in \Z : 1 = a*c $
+- Para esto, las posibles combinaciones son:
+  - $ a = 1 $ y $ c = 1 $
+  - $ a = -1 $ y $ c = -1 $
+- Es necesario que $ a = 1 $ o $ a = -1 $
 
 ### (b) $ a|b $ y $ b|c $ entonces $ a|c $
 
@@ -501,21 +493,123 @@ $$
 
 ## 14. La suma de un número complejo y su conjugado es −8 y la suma de sus módulos es 10. De qué números complejos se trata?
 
+Sabemos que $ z = a + i*b $
+- Siendo $ a, b \in \R $
+- El conjugado es $ \bar{z} = a - i*b $
+- Del enunciado tenemos que $ z + \bar{z} = -8 $ y $ |z| + |\bar{z}| = 10 $.
+
+$$
+z + \bar{z} = -8 \to a+ib+(a-ib) = -8 \to 2a = -8 \to a = -4
+$$
+
+$$
+|z| + |\bar{z}| = 10 \to \sqrt{a^2+b^2} + \sqrt{a^2+(-b^2)} = 10 \to 2*\sqrt{a^2+b^2} = 10 \to \sqrt{a^2+b^2} = 5
+$$
+
+- Reemplazando $ a = -4 $
+
+$$
+\sqrt{16+b^2} = 5 \to 16+b^2 = 25 \to b^2 = 9 \to b = \sqrt{9} \to |b| = \pm 3
+$$
+
+Entonces, tenemos dos z:
+- $ z_1 = -4 + 3i $
+- $ z_2 = -4 - 3i $
+
+## 15. Encuentre $ x $ e $ y $ tales que:
+
+### a) $  x − 15i = 9 + 5yi $
+
+En el lado izquierdo de la igualdad:
+- $ Re(z) = x $
+- $ Im(z) = -15 $
+
+En el lado derecho de la igualdad:
+- $ Re(z) = 9 $
+- $ Im(z) = 5y $
+
+Igualamos las partes reales y las partes imaginarias:
+- $ x = 9 $
+- $ -15 = 5y $
+
+Ya tenemos que $ x = 9 $. Ahora despejamos a $ y $:
+
+$$
+y = \frac{-15}{5} \to y = -3
+$$
 
 
-## 15. Hallar, si existe, x real tal que Re(z) = Im(z) siendo z = x+2i 4−3i
+### b) $ 2x + 3yi = 6 + yi $
 
-## 16. Encontrar, si existe,un valor de k real para que el complejo 2−(1+k)i 1−ki sea un n´umero real.
+En el lado izquierdo de la igualdad:
+- $ Re(z) = 2x $
+- $ Im(z) = 3y $
 
-## 17. Calcular las siguientes potencias:
+En el lado derecho de la igualdad:
+- $ Re(z) = 6 $
+- $ Im(z) = y $
 
-### a) i489 
+Igualamos las partes reales y las partes imaginarias:
+- $ 2x = 6 \to x = \frac{6}{2} \to x = 3 $
+- $ 3y = y \to 3y - y = 0 \to 2y = 0 \to y = 0/2 \to y = 0 $
 
-### b) −i1026 
+## 16. Hallar, si existe, x real tal que Re(z) = Im(z) siendo $ z = \frac{x+2i}{4−3i} $
 
-### c) (3i)168
+Al ser una fracción, no podemos separar a la parte real de la parte imaginaria (por el denominador).
+Multiplicamos por el conjugado del denominador:
 
-## 18. Dados los siguientes n´umeros complejos, encontrar la forma m´as adecuada para realizar las operaciones pediddas:
+$$
+\frac{x+2i}{4−3i} * \frac{4+3i}{4+3i} = \frac{(x+2i)*(4+3i)}{(4-3i)*(4+3i)} = \frac{4x+3xi+2i*4+6i^2}{16+3i4-3i4-9i^2} = \\
+\frac{4x+3xi+8i-6}{25} = \frac{4x-6+i*(3x+8)}{25}
+$$
+
+Al hacer esto, podemos separar la parte real de la parte imaginaria:
+- $ Re(z) = \frac{4x-6}{25} $
+- $ Im(z) = \frac{3x+8}{25} $
+
+Ahora, igualamos ambas partes:
+
+$$
+\frac{4x-6}{25} = \frac{3x+8}{25} \to \frac{4x-6}{25} - (\frac{3x+8}{25}) = 0 \to \frac{x - 14}{25} = 0 \to x - 14 = 0 * 25 \\
+\to x-14 = 0 \to x = 14
+$$
+
+Entonces, llegamos a que $ x = 14 $
+
+## 17. Encontrar, si existe, un valor de k real para que el complejo $ \frac{2−(1+k)i}{1−ki} $ sea un número real.
+
+Igual que antes, multiplicamos por el conjugado del denominador.
+
+$$
+\frac{2−(1+k)i}{1−ki} * \frac{1+ki}{1+ki} = \frac{(2−(1+k)i)*(1+ki)}{(1-ki)*(1+ki)} = \frac{2(1+ki)-(1+k)i(1+ki)}{1^2-(ki)^2} = \\
+\frac{2(1+ki)-(1+k)(i+ki^2)}{1+k^2} = \frac{2(1+ki-(1+k)(i-k))}{1+k^2} = \frac{2+2ki-(i-k+ki-k^2)}{1+k^2} = \frac{2+2ki-i+k-ki+k^2}{1+k^2} = \frac{(2+k+k^2)+(2k-1-k)*i}{1+k^2}
+$$
+
+No tenemos la parte imaginaria en el denominador, además pudimos separar a la parte real de la parte imaginaria.
+
+Para que $ z $ sea un número real, la parte imaginaria debería ser cero. Lo que significaría que $ i $ en el numerador sea igual a 0.
+
+$$
+\frac{(2k-1-k)}{1+k^2} = 0 \to 2k-1k = 0 * (1+k^2) \to 2k-1-k = 0 \to k = 1
+$$
+
+Encontramos real de k, donde si $ k = 1 $, la parte imaginaria es igual a 0.
+
+## 18. Calcular las siguientes potencias:
+
+### a) $ i^{489} $
+
+
+
+### b) $ −i^{1026} $ 
+
+
+
+### c) $ (3i)^{168} $
+
+
+
+## 19. Dados los siguientes n´umeros complejos, encontrar la forma más adecuada para realizar las operaciones pediddas:
 
 $$ 
 z_1 = 3 + 3i \quad z_2 = −1 + i \quad z_3 = 5 + 4i \quad z_4 = 9 \quad z_5 = 5i \quad z_6 = −7 \\
