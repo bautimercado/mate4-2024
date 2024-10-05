@@ -599,15 +599,21 @@ Encontramos real de k, donde si $ k = 1 $, la parte imaginaria es igual a 0.
 
 ### a) $ i^{489} $
 
-
+$$
+i^{489} = i^{4*122+1} = i^{4*122} * i^1 = (i^4)^{122} * i = 1^{122} * i = i
+$$
 
 ### b) $ −i^{1026} $ 
 
-
+$$
+-i^{1026} = -1 * i^{1026} = -1 * i^{4*256+2} = -1 * (i^4)^{256} * i^2 = -1 * 1^{256} * -1 = 1
+$$
 
 ### c) $ (3i)^{168} $
 
-
+$$
+(3i)^{168} = (3i)^{4*42} = 3^{168} * (i^4)^{42} = 3^{168} * 1^{42} = 3^{168}
+$$
 
 ## 19. Dados los siguientes n´umeros complejos, encontrar la forma más adecuada para realizar las operaciones pediddas:
 
@@ -617,19 +623,75 @@ z_7 = −4 − 4i \quad z_8 = −8i \quad z_9 = 2 − 2i \quad z_{10} = 3 − 4i
 $$
 
 ### a) $ z_1 + z_7 $
+
+$$
+z_1 + z_7 = (3+3i) + (-4 -4i) = -1-i
+$$
+
 ### b) $ z_5 − z_3 $
+
+$$
+z_5 - z_3 = (5i) - (5+4i) = -5+i
+$$
+
 ### c) $ z_9*z_6 $ 
+
+$$
+z_9*z_6 = (2-2i) * (-7+0i) = -14 + 14i
+$$
+
 ### d) $ z_8/z_{10} $ 
+
+$$
+\frac{z_8}{z_{10}} = \frac{-8i}{3-4i} = \frac{-8i}{3-4i} * \frac{3+4i}{3+4i} = \frac{(-8i)*(3+4i)}{(3-4i)*(3+4i)} \\
+= \frac{-24i-32i^2}{9+12i-12i-16i^2} = \frac{32-24i}{25} = \frac{32}{25} - \frac{24}{25}i
+$$
+
 ### e) $ z_3 + z_6 $
+
+$$
+z_3 + z_6 = (5+4i) + (−7+0i) = -2+4i
+$$
+
 ### f) $ z_2 − z_6 $
+
+$$
+z_2 - z_6 = (−1 + i) - (−7+0i) = 6+i
+$$
+
 ### g) $ z_3*z_{10} $
+
+$$
+z_3 * z_{10} = (5+4i) * (3−4i) = 15-20i+12i-16i^2 = 15 - 8i + 16 = 31 - 8i
+$$
+
 ### h) $ z_1³ $
+
+
+
 ### i) $ z_9⁹ $
+
+
+
 ### j) $ z^{15}_5 $
+
+
+
 ### k) $ z³_{10} $
+
+
+
 ### l) hallar las ra´ıces cuartas de z2
+
+
+
 ### m) hallar las ra´ıces c´ubicas de z4
+
+
+
 ### n) hallar las ra´ıces s´eptimas de i
+
+
 
 # Ejercicios Adicionales
 
