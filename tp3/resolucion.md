@@ -667,31 +667,255 @@ $$
 
 ### h) $ z_1³ $
 
+Módulo de $ z_1 $
 
+$$
+|z_1| = \sqrt{3^2 + 3^2} = \sqrt{9+9} = \sqrt{18}
+$$
+
+Argumento $ \theta $ de $ z_1 $:
+
+$$
+\theta = arctan(\frac{3}{3}) = \frac{\pi}{4}
+$$
+
+$ z_1 $ en forma trigonometrica:
+
+$$
+z_1 = \sqrt{18}*(\cos(\frac{\pi}{4})+i \sin(\frac{\pi}{4}))
+$$
+
+$$
+z_1^3 = \sqrt{18}^3 * (\cos({\frac{3}{4}}\pi) +i \sin(\frac{3}{4}\pi))
+$$
 
 ### i) $ z_9⁹ $
 
+Módulo de $ z_9 $:
 
+$$
+|z_9| = \sqrt{2^2 + (−2)^2} = \sqrt{4+4} = \sqrt{8}
+$$
+
+Argumento $ \theta $ de $ z_9 $:
+
+$$
+\theta = arctan(\frac{-2}{2}) = -\frac{\pi}{4}
+$$
+
+$ z_9 $ en forma trigonometrica:
+
+$$
+z_9 = \sqrt{8} * (\cos(-\frac{\pi}{4} + i \sin(-\frac{\pi}{4})))
+$$
+$$
+z_9^9 = \sqrt{8}^9 * (\cos(-{\frac{9}{4}}\pi) + i \sin(-\frac{9}{4}\pi))
+$$
+
+El argumento $ \theta = -\frac{9}{4}\pi $ debe ser $ 0 < \theta < 2\pi $. Entonces:
+
+$$
+-\frac{9}{4} \pi + 4\pi = \frac{7}{4}\pi
+$$
+
+Ahora, $ z_9^9 $ en su forma trigonometrica quedaría:
+
+$$
+z_9^9 = \sqrt{8}^9 * (\cos(\frac{7}{4}\pi) + i \sin(\frac{7}{4}\pi)
+$$
 
 ### j) $ z^{15}_5 $
 
-
+$$
+z_5^{15} = (5i)^{15} = 5^{15} * i^{15} = 5^{15} * i^{4*3+3} = 5^{15} * (i^4)^3 + i^3 = 5^{15} * 1^3 - i = 5^{15} - i
+$$
 
 ### k) $ z³_{10} $
 
+Módulo de $ z_{10} $:
+$$
+|z_{10}| = \sqrt{3^2 + (−4)^2} = \sqrt{9 + 16} = \sqrt{25} = 5
+$$
 
+Argumento $ \theta $ de $ z_{10} $:
 
-### l) hallar las ra´ıces cuartas de z2
+$$
+\theta = arctan(\frac{-4}{3}) = -0.9273
+$$
 
+Forma trigonometrica de $ z_{10} $:
 
+$$
+z_{10} = 5 * (\cos(-0.9273) + i \sin(-0.9273))
+$$
 
-### m) hallar las ra´ıces c´ubicas de z4
+$$
+z_{10}^3 = 125 * (\cos{(-2.7819)} + i \sin(-2.7819))
+$$
 
+El argumento $ \theta $ debe ser $ 0 < \theta < 2\pi $
 
+$$
+-2.7819+2\pi = 3.5013 
+$$
 
-### n) hallar las ra´ıces s´eptimas de i
+Entonces, nos quedaría:
 
+$$
+z_{10}^3 = 125 * (\cos(3.5013) + i \sin(3.5013))
+$$
 
+### l) hallar las raíces cuartas de $ z_2 $
+
+Módulo de $ z_2 $:
+
+$$
+|z_2| = \sqrt{(-1)^2+1^2} = \sqrt{2}
+$$
+
+Argumento $ \theta $ de $ z_2 $:
+
+$$
+\theta = arctan(\frac{1}{-1}) = -\frac{\pi}{4}
+$$
+
+$ \theta $ debe ser $ 0 < \theta < 2\pi $, entonces:
+
+$$
+-\frac{\pi}{4} + 2\pi = \frac{7}{4}\pi
+$$
+
+$ z_2 $ en forma trigonometrica:
+
+$$
+z_2 = \sqrt{2} * (cos(\frac{7}{4}\pi) + i \sin(\frac{7}{4}\pi))
+$$
+
+Ahora tenemos que pensar en un complejo $ w $ que nos de $ z_2 $ y nos permita calcular sus raíces cuartas.
+
+$$
+|w| = \sqrt[4]{|z_2|} = \sqrt[4]{\sqrt{2}} = \sqrt[8]{2}
+$$
+
+$$
+a_k = \frac{\frac{7}{4}\pi + 2k\pi}{4} \quad 0 \le k < 4
+$$
+
+Entonces, para cada $ k $:
+
+$$
+a_0 = \frac{\frac{7}{4}\pi+2*0*\pi}{4} = \frac{7}{16}\pi \\
+a_1 = \frac{\frac{7}{4}\pi+2*1*\pi}{4} = \frac{15}{16}\pi \\
+a_2 = \frac{\frac{7}{4}\pi+2*2*\pi}{4} = \frac{23}{16}\pi \\
+a_3 = \frac{\frac{7}{4}\pi+2*3*\pi}{4} = \frac{31}{16}\pi
+$$
+
+Entonces, las raíces cuartas serían:
+
+$$
+w_0 = \sqrt[8]{2} * (\cos(\frac{7}{16}\pi) + i \sin(\frac{7}{16}\pi)) \\
+w_1 = \sqrt[8]{2} * (\cos(\frac{15}{16}\pi) + i \sin(\frac{15}{16}\pi)) \\
+w_2 = \sqrt[8]{2} * (\cos(\frac{23}{16}\pi) + i \sin(\frac{23}{16}\pi)) \\
+w_3 = \sqrt[8]{2} * (\cos(\frac{31}{16}\pi) + i \sin(\frac{31}{16}\pi))
+$$
+
+### m) hallar las raíces cúbicas de $ z_4 $
+
+Módulo de $ z_4 $:
+
+$$
+|z_4| = \sqrt{9^2 + 0^2} = \sqrt{81} = 9 
+$$
+
+Argumento $ \theta $ de $ z_4 $:
+
+$$
+\theta = arctan(\frac{0}{9}) = 0
+$$
+
+La forma trigonometrica de $ z_9 $ es:
+
+$$
+z_9 = 9 * (\cos(0) + i \sin(0))
+$$
+
+Tenemos que pensar un complejo $ w $ para calcular las raíces cúbicas de $ z_4 $
+
+$$
+|w| = \sqrt[3]{|z|} = \sqrt[3]{9}
+$$
+
+Entonces, calculamos el argumento para cada $ k $:
+$$
+a_k = \frac{0 + 2k\pi}{3} \quad 0 \le k < 3
+$$
+
+$$
+a_0 = \frac{0 + 2*0*\pi}{3} = 0 \\
+a_1 = \frac{0 + 2*1*\pi}{3} = \frac{2}{3}\pi \\
+a_2 = \frac{0 + 2*2*\pi}{3} = \frac{4}{3}\pi
+$$
+
+Las raíces cúbicas de $ z_4 $ son:
+
+$$
+w_0 = \sqrt[3]{9} * (\cos(0) + i \sin(0)) \\
+w_1 = \sqrt[3]{9} * (\cos(\frac{2}{3}\pi) + i \sin(\frac{2}{3}\pi)) \\
+w_2 = \sqrt[3]{9} * (\cos(\frac{4}{3}\pi) + i \sin(\frac{4}{3}\pi))
+$$
+
+### n) hallar las raíces séptimas de $ i $
+
+Módulo de $ i $:
+$$
+|0+i| = \sqrt{0^2 + 1^2} = 1
+$$
+
+Argumento $ \theta $ de $ i $:
+
+$$
+\theta = \frac{\pi}{2}
+$$
+
+Forma trigonometrica de $ i $:
+
+$$
+i = 1 * (\cos(\frac{\pi}{2}) + i \sin(\frac{\pi}{2}))
+$$
+
+Hay que calcular un complejo $ w $ que nos permita calcular las raíces septimas de $ i $
+
+$$
+|w| = \sqrt[7]{|i|} = \sqrt[7]{1} = 1 
+$$
+
+Entonces, calculamos el argumento para cada $ k $:
+
+$$
+a_k = \frac{\frac{\pi}{2} + 2k\pi}{7} \quad 0 \le k < 7
+$$
+
+$$
+a_0 = \frac{\frac{\pi}{2} + 2*0*\pi}{7} = \frac{\pi}{14} \\
+a_1 = \frac{\frac{\pi}{2} + 2*1*\pi}{7} = \frac{5}{14}\pi \\
+a_2 = \frac{\frac{\pi}{2} + 2*2*\pi}{7} = \frac{9}{14}\pi \\
+a_3 = \frac{\frac{\pi}{2} + 2*3*\pi}{7} = \frac{13}{14}\pi \\
+a_4 = \frac{\frac{\pi}{2} + 2*4*\pi}{7} = \frac{17}{14}\pi \\
+a_5 = \frac{\frac{\pi}{2} + 2*2*\pi}{7} = \frac{3}{2}\pi \\
+a_6 = \frac{\frac{\pi}{2} + 2*2*\pi}{7} = \frac{24}{14}\pi \\
+$$
+
+Las raíces septimas de $ i $ son:
+
+$$
+w_0 = (\cos(\frac{\pi}{14}) + i \sin(\frac{\pi}{14})) \\
+w_1 = (\cos(\frac{5}{14}\pi) + i \sin(\frac{5}{14}\pi)) \\
+w_2 = (\cos(\frac{9}{14}\pi) + i \sin(\frac{9}{14}\pi)) \\
+w_3 = (\cos(\frac{13}{14}\pi) + i \sin(\frac{13}{14}\pi)) \\
+w_4 = (\cos(\frac{17}{14}\pi) + i \sin(\frac{17}{14}\pi)) \\
+w_5 = (\cos(\frac{3}{2}\pi) + i \sin(\frac{3}{2}\pi)) \\
+w_6 = (\cos(\frac{25}{14}\pi) + i \sin(\frac{25}{14}\pi))
+$$
 
 # Ejercicios Adicionales
 
