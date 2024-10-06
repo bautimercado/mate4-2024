@@ -22,42 +22,176 @@
 
 - Si se corresponde, ya que el vacío se incluye en todos los conjuntos.
 
-## 2. Sea A = {−3, −2, −1, 0, 1, 2, 3}, B = Z y la relaci´on de A en B que viene definida en la forma: xRy si y s´olo si y es el cuadrado de x. Escribe R por extensi´on. Define R−1 por comprensi´on y por extensi´on.
+## 2. Sea A = {−3, −2, −1, 0, 1, 2, 3}, B = Z y la relación de A en B que viene definida en la forma: $ xRy $ si y sólo si $ y $ es el cuadrado de $ x $. Escribe R por extensión. Define R^{−1} por comprensión y por extensión.
+
+<u>$ R $ por extensión:</u>
+
+$$
+R = \{ (-3,9), (-2, 4), (-1, 1), (0,0), (1,1), (2,4), (3,9) \}
+$$
+
+<u>$ R^{-1} $ por comprensión:</u>
+
+$$
+R^{-1} = \{ (y,x):(x,y) \in \R \} \\
+R^{-1} = \{ (y,x): y \in B \land x \in A \land (y = x^2) \}
+$$
+
+<u>$ R^{-1} $ por extensión:</u>
+
+$$
+R^{-1} = \{ (9,-3), (4, -2), (1, -1), (0,0), (1,1), (4, 2), (9, 3) \}
+$$
 
 ## 3. Sean los conjuntos A = {a, b, c, d, e} , V = {vocales} y B = {1, 2, 3}. Decide si las siguientes corresponden a relaciones. Justifica.
 
 ### (a) R = {(a, a, a); (a, b, c); (b, c, d)} en A × A × A
 
-### (b) R = {(a, a, a); ((c, e, 2); (a, b, 1)} en A × V × B
+- Es una relación válida, ya que los elementos de cada tupla está en AxAxA.
+
+### (b) R = {(a, a, a); (c, e, 2); (a, b, 1)} en A × V × B
+
+- La relación no es válida, podemos ver que en el tercer componente de la primera tupla hay una letra (que no está en el conjunto B).
+- Además, en el segundo componente de la tercera tupla hay una "b" que no pertenece al conjunto V.
 
 ### (c) R = {(a, b, 1); (e, c, 2) : (i, j, 3)} en V × A × B
 
-### (d) R = {(a, z, 3); ((b, i, 2); (c, x, 1)} en A × V × B
+- La relación no es válida, ya que en el segundo componente de la tercer tupla hay una "j" que no pertenece al conjunto A.
 
-## 4. Sea A = {1, 2, 3} y la relaci´on R en A × A × A definida en la forma: (x, y, z) ∈ R si y s´olo si x < y & y < z , siendo < el ”menor” usual entre n´umeros reales. Escribe R por extensi´on
+### (d) R = {(a, z, 3); (b, i, 2); (c, x, 1)} en A × V × B
 
-## 5. Para cada una de las siguientes relaciones: dar tres pares que pertenezcan y tres pares que no; indicar si son reflexivas, sim´etricas, antisim´etricas, y/o transitivas.
+- La relación no es válida, ya que los segundos componentes de la primera y tercera tupla no pertenecen al conjunto V.
 
-### (a) En el conjunto de los n´umeros reales
-#### • xRy si y s´olo si x ≥ 4 & y ≥ 5 .
-#### • xRy si y s´olo si y ≤ x ≤ y + 3 .
+## 4. Sea A = {1, 2, 3} y la relación R en A × A × A definida en la forma: (x, y, z) ∈ R si y sólo si x < y & y < z , siendo < el ”menor” usual entre números reales. Escribe R por extensión
 
-### (b) Sean A = {1, 2, 3, 4} y P (A) el conjunto de partes de A
+$$
+R = \{ (1, 2, 3) \}
+$$
 
-#### • en P (A) , XRY si y s´olo si X ∩ Y = ∅
-#### • en P (A) , XRY si y s´olo si X ⊂ Y
+## 5. Para cada una de las siguientes relaciones: dar tres pares que pertenezcan y tres pares que no; indicar si son reflexivas, simétricas, antisimétricas, y/o transitivas.
 
-## 6. Determinar si las siguientes relaciones definidas en A = {a, b, c, d} son reflexivas, sim´etricas, antisim´etricas y transitivas:
+### (a) En el conjunto de los números reales
 
-### • R0 = ∅
+#### xRy si y sólo si x ≥ 4 & y ≥ 5 .
 
-### • R1 = {(a, a); (a, b); (d, c); (c, d)}
+<u>Pares que pertenecen:</u>
 
-### • R2 = {(a, a); (b, b); (a, b); (b, a); (d, d); (c, c)}
+- $ (4,5) $
+- $ (5,6) $
+- $ (6,7) $
 
-### • R3 = {(a, a); (a, b); (b, a); (b, c); (c, b); (b, b)}
+<u>Pares que no pertenecen:</u>
 
-### • R4 = A × A
+- $ (5,4) $
+- $ (2, 10) $
+- $ (hola, chau) $
+
+No es reflexiva, no se cumple que xRx
+- Contraejemplo: $ x = 4 \to (4,4) \notin R $
+
+No es simétrica, no se cumple que xRy entonces yRx
+- Contraejemplo: $ (4,5) \in R \to (5,4) \in R $
+- El antecedente es verdadero pero el consecuente es falso, por lo tanto, la implicancia es falsa.
+
+No es antisimétrica, ya que no se cumple que xRy e yRx implican x = y.
+- Contraejemplo: $ (5,6) \in R \land (6,5) \in R \to 5 = 6  $
+- El antecedente es verdadero pero el consecuente es falso, por lo tanto, la implicancia es falsa.
+
+La relación es transitiva, para todo $ (x,y,z) \in \R $, se cumple que $ xRy \land yRz \to xRz $
+- Vale $ xRy $ ya que $ x \ge 4 \land y \ge 5 $.
+- Vale $ yRz $ ya que $ y \ge 4 \land z \ge 5 $.
+- Como $ x \ge 4 $ y $ z \ge 5 $, entonces se cumple que $ xRz $.
+- Entonces, tanto el antecedente como el consecuente son verdaderos, por lo tanto la implicación se cumple y se concluye con que se cumple la transitividad.
+
+#### xRy si y sólo si y ≤ x ≤ y + 3 .
+
+<u>Pares que pertenecen</u>
+
+- $ (3, 1) $
+- $ (2, 2) $
+- $ (5, 2) $
+
+<u>Pares que no pertenecen:</u>
+
+- $ (0, 1) $
+- $ (10, 2) $
+- $ (hola, 8) $
+
+La relación es reflexiva, para todo $ x \in \R $ se cumple que xRx.
+- d Al ser una relación $ \le $, se va a cumplir, ya que todo x es menor o igual que sí misma, y la suma de ese x con 3 es mayor que si misma.
+
+La relación no es simétrica, no se cumple que para todo $ (x,y) \in \R : xRy \to yRx$
+- Contraejemplo: $ (3,1) \in R \to (1,3) \in R $
+- Como el antecedente es verdadero pero el consecuente es falso, no se cumple la implicancia, por lo tanto no es simétrica.
+
+La relación es antisimétrica, ya que se cumple que para todo $ (x,y) \in R : xRy \land yRx \to x = y $.
+- Sean $ (x,y) \in R : x = y $, se cumple que $ xRy \land yRx $ (porque la relación es reflexiva).
+- Sean $ (x,y) \in R : x < y $, se cumple que $ x \le y \le x+3 $ por lo tanto $ yRx $ pero no se da que $ xRy $ (porque $ x < y $). Entonces, el antecedente es falso pero la implicancia se cumple.
+- Sean $ (x,y) \in R: y < x $, se cumple que $ y \le x \le y+3 $ y por lo tanto $ xRy $ pero no se da que $ yRx $ (porque $ y < x $). Entonces, el antecedente es falso pero la implicancia se cumple.
+
+La relación no es transitiva, ya que no se cumple que para todo $ (x,y,z) \in R : xRy \land yRz \to xRz $
+- Contraejemplo: $ (10, 7) \in xRy \land (7,4) \in yRz \to (10,4) \in xRz $
+- Como el antecedente es verdadero y el consecuente es falso, la implicancia es falsa, por lo tanto no es transitiva.
+
+### (b) Sean A = {1, 2, 3, 4} y P(A) el conjunto de partes de A
+
+$$
+P(A) = \{ (\empty),(1),(2),(3),(4),(1,2),(1,3),(1,4),(2,1),(2,2)(2,3),(2,4), \\ (3,1),(3,2),(3,3),(3,4),(4,1),(4,2),(4,3),(4,4),(1,1,1)(1,1,2),(1,1,3), \\ (1,1,4),..., (1,2,3,4) \}
+$$
+
+#### En P(A), xRy si y sólo si x ∩ y = ∅
+
+<u>Pares que pertenecen</u>
+
+- {(1),(2,3)}
+- {(2),(3,4)}
+- {(1,2,3),(4)}
+
+<u>Pares que no pertenecen:</u>
+
+- ({2,2},{2,2})
+- ({1,1},{1,1})
+- ({1,2,3},{3,2,1})
+
+La relación no es reflexiva, no se cumple que para todo $ x \in P(A) $ que $ xRx $.
+- Contraejemplo: $ (\{1\}) \in P(A) $ pero $ (\{1\},\{1\}) \notin R$.
+
+La relación si es simétrica, se da que para todo $ (x,y) \in P(A) : xRy \to yRx $
+- Si $ xRy $ vale, entonces se cumple que $ x \cap y = \empty $.
+- Como la intersección es conmutativa, se puede $ y \cap x = \empty $, entonces $ yRx $.
+- Por lo tanto $ xRy \to yRx $.
+
+La relación no es antisimétrica, no se cumple que para todo $ (x,y) \in P(A) : xRy \land yRx \to x = y $.
+- Contraejemplo: $ (\{1,2\}, \{3,4\}) \in R \land (\{3,4\},\{1,2\}) \in R \to \{1,2\} = \{3,4\} $
+- Como el antecedente es verdadero y el consecuente es falso, la implicación es falsa, por lo tanto no es antisimétrica
+
+La relación no es transitiva, no se cumple que para todo $ (x,y,z) \in P(A): xRy \land yRz \to xRz $
+- Contraejemplo: $ (\{1,4\},\{2\}) \in R \land (\{2\},\{3,4\}) \in R \to (\{1,4\},\{3,4\}) \in R $.
+- Como el antecedente es verdadero y el consecuente es falso, la implicancia es falsa, por lo tanto no es simétrica.
+
+#### En P(A), xRy si y sólo si X ⊂ Y
+
+Lo dejo para el repaso
+
+<u>Pares que pertenecen</u>
+
+
+
+<u>Pares que no pertenecen:</u>
+
+
+
+## 6. Determinar si las siguientes relaciones definidas en A = {a, b, c, d} son reflexivas, simétricas, antisimétricas y transitivas:
+
+### R0 = ∅
+
+### R1 = {(a, a); (a, b); (d, c); (c, d)}
+
+### R2 = {(a, a); (b, b); (a, b); (b, a); (d, d); (c, c)}
+
+### R3 = {(a, a); (a, b); (b, a); (b, c); (c, b); (b, b)}
+
+### R4 = A × A
 
 ## 7. Escribir la matriz y los digrafos asociados a las relaciones anteriores
 
