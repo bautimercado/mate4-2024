@@ -350,71 +350,272 @@ Sacado de la teoría, la divisibilidad en los números naturales es reflexiva, a
 
 ## 12. Proponer una relación en el conjunto de los alumnos de Informática. Mostrar que propiedades tiene (reflexividad, simetría, etc...)
 
-## 13. Dada una relaci´on binaria R sobre un conjunto A, se define la relaci´on complemento de R, ¯R por: a ¯Rb si y s´olo si a no est´a relacionada con b por R
+A = {alumnos de informática}
 
-### • Dar un ejemplo de una relaci´on R y su complemento
+$ (x,y) \in R $ si y sólo si $ x $ e $ y $ están inscriptos en la misma materia.
 
-### • Probar que si R ⊂ S entonces ¯S ⊂ ¯R
+La relación es reflexiva, se cumple que para todo $ x \in A $ que $ xRx $.
+- Si el alumno $ x $ está inscripto en alguna materia, entonces él mismo está inscripto en la misma materia. Por lo tanto se da que $ xRx $ para cualquier alumno.
 
-## 14. Dada R una relaci´on binaria sobre A, probar que:
+La relación es simétrica, se cumple que para todo $ x,y \in A: xRy \to yRx $.
+- Si los alumnos $ x $ e $ y $ están inscriptos en la misma materia, necesariamente $ y $ y $ x $ también lo están (la inscripsión es mutua).
 
-### (a) R es reflexiva si y s´olo si R−1 tambi´en lo es
+No es antisimétrica, no se cumple que para todo $ x,y \in A: xRy \land yRx \to x = y $.
+- Dos alumnos diferentes pueden estar inscriptos en la misma materia, entonces se cumple $ xRy $ y $ yRx $, pero eso no implica que $ x = y $ (son alumnos diferentes).
 
-### (b) R es sim´etrica si y s´olo si R−1 = R
+La relación no es transitiva, no se cumple que para todo $ x,y,z \in A: xRy \land yRz \to xRz $.
+- Si $ x $ e $ y $ están inscriptos en la misma materia, e $ y $ y $ z $ están en la misma materia, no necesariamente implica que $ x $ y $ z $ están en la misma materia.
 
-### (c) R es sim´etrica si y s´olo si R−1 y ¯R tambi´en lo son
+## 13. Dada una relación binaria $ R $ sobre un conjunto A, se define la relación complemento de R, $ \bar{R} $ por: $ a\bar{R}b $ si y sólo si a no está relacionada con b por R.
 
-### (d) R es antisim´etrica si y s´olo si R ∩ R−1 ⊂ ∆A
+### Dar un ejemplo de una relación R y su complemento
 
-## 15. Se dice que una relaci´on R sobre un conjunto A es asim´etrica si cada vez que a est´a relacionado con b no se da que b est´e relacionado con a Dar un ejemplo de una relaci´on asim´etrica
+- $ A = \Z $
+- $ R $ = {(x,y): y es el doble de x}
+- $ \bar{R} $ = {(x,y): y no es el doble de x}
 
-## 16. Probar que dada una relaci´on R sobre un conjunto A, R es asim´etrica si y s´olo si R ∩ R−1 = ∅
+### Probar que si R ⊂ S entonces $ \bar{S} \sub \bar{R} $
+
+1. $ x,y \in S \to x,y \notin S $ Definición de complemento.
+2. $ x,y \in \bar{R} \to x,y \notin R $ Definición de complemento.
+3. $ R \sub S \to x,y \in R \to x,y \in S $ Definición de subconjunto.
+4. $ x,y \notin S \to x,y \notin R $
+5. $ x,y \notin S \to x,y \in \bar{S} $
+6. $ x,y \notin R \to x,y \in \bar{R} $
+7. Entonces, podemos decir que $ x,y \in \bar{S} to x,y \in bar{R} $.
+8. $ x,y \in \bar{S} \to x,y \in \bar{R} \to \bar{S} \sub \bar{R} $.
+
+## 14. Dada R una relación binaria sobre A, probar que:
+
+### (a) R es reflexiva si y sólo si R^{-1} también lo es
+
+$ R $ es reflexiva $ \to R^{-1} $ es reflexiva.
+- $ x \in R \to xRx $
+- Si R es reflexiva, para todo $ x \in A $ se cumple que $ xRx $.
+- Por definición del inverso: $ xRx \to xR^{-1}x $.
+- Al tener $ xR^{-1}x $ implica que $ x \in R^{-1}.
+- Entonces, para todo $ x \in A $ vale que $ xR^{-1}x $, entonces $ R^{-1} es reflexiva.
+
+$ R^{-1} $ es reflexiva $ \to R $ es reflexiva.
+- $ x \in R^{-1} \to xR^{-1}x $.
+- Si $ R^{-1} $ es reflexiva, para todo $ x \in A $ se cumple que $ xR^{-1}x $.
+- Por definición del inverso: $ xR^{-1}x \to xRx $.
+- Al tener $ xRx $, eso implica que $ x \in R $.
+- Entonces, para todo $ x \in A $ vale que $ xRx $, entonces R es reflexiva.
+
+### (b) R es simétrica si y sólo si R^{−1} = R
+
+R es simétrica $ \to R^{-1} = R $.
+- $ x, y \in R \to xRy $.
+- $ xRy \to yRx $.
+- Si R es simétrica, para todo $ x,y \in A $ vale que $ xRy $.
+- $ yRx \to y,x \in R $.
+- Por definición de inverso: $ yRx \to xR^{-1}y $
+- Al tener que $ xR^{-1}y $ eso implica que $ x,y \in R^{-1} $.
+- Entonces $ R \sube R^{-1} $
+
+- Tenemos que $ w, z \in R^{-1} \to wR^{-1}z $
+- Por definición de inverso: $ wR^{-1}z \to zRw $
+- Si R es simétrica, $ w, z \in A $ vale que $ zRw \to wRz $.
+- Entonces, $ aRb \to a, b \in R $.
+- Por lo tanto, $ R^{-1} \sube R $.
+
+$ R^{-1} = R \to R $ es simétrica.
+- Por hipótesis ($ R^{-1} = R $) tenemos que x,y \in R \to x, y \in R^{-1}.
+- Por definición de inverso: $ x,y \in R^{-1} \to y,x \in R $.
+- $ x,y \in R \to xRy $.
+- $ y,x \in R \to yRx $
+- Empezamos diciendo que $ xRy $ y llegamos a que $ yRx $, por lo tanto R es simétrica.
+
+
+### (c) R es simétrica si y sólo si R^{−1} y $ bar{R} $ también lo son
+
+### (d) R es antisimétrica si y sólo si R ∩ R^{−1} ⊂ ∆A
+
+## 15. Se dice que una relación R sobre un conjunto A es asimétrica si cada vez que a está relacionado con b no se da que b esté relacionado con a. Dar un ejemplo de una relación asimétrica.
+
+$$
+A = (a,b,c,d) \\
+R = \{(a,b),(c,d)\} 
+$$
+
+## 16. Probar que dada una relación R sobre un conjunto A, R es asimétrica si y sólo si $ R ∩ R^{-1} = ∅ $.
+
+R es asimétrica $ \to R \cap R^{-1} = \empty $.
+- Por definición de asimetria, tenemos que para todo $ x,y \in A: x,y \in R \land y,x \notin R $.
+- Por definición de inverso, tenemos que $ xRy \to yR^{-1}x $
+- Entonces, para todo $ x, y \in A: y,x \notin R \land y,x \in R^{-1} \to R \cap R^{-1} = \empty $
+
+$ R \cap R^{-1} = \empty \to R $ es asimétrica.
+- Partimos de que $ R \cap R^{-1} = \empty $, lo que significa que $ x,y \in R \to y,x \notin R $.
+- Por definición de inverso: $ y,x \in R^{-1} \to x,y \in R$.
+- Para todo $ x,y \in A $ se da que $ x,y \in R \land y,x \notin R $, por lo tanto, R es asimétrica.
 
 ## 17. Sean R y S dos relaciones en A. Probar que:
 
-### (a) Si R ⊂ S entonces R−1 ⊂ S−1
+### (a) Si $ R ⊂ S $ entonces $ R^{−1} ⊂ S^{−1}
 
-### (b) Si R y S son reflexivas entonces R ∪ S y R ∩ S tambi´en lo son
+La hipótesis es que $ R \sub S $, lo que significa que $ (x,y) \in R \to (x,y) \in S $ (para todo $ x,y \in A $).
+- Definición de inversa: $ (x,y) \in R \to (y,x) \in R^{-1} $ y $ (x,y) \in S \to (y,x) \in S^{-1} $.
+- Dado que $ (x,y) \in R \to (x,y) \in S $, se tiene que $ (y,x) \in R^{-1} \to (y,x) \in S^{-1} $.
+- Por lo tanto $ R^{-1} \sub S^{-1} $.
 
-### (c) Si R y S son sim´etricas entonces R ∪ S y R ∩ S tambi´en lo son
+### (b) Si R y S son reflexivas entonces $ R ∪ S $ y $ R ∩ S $ también lo son.
+
+Por hipótesis tenemos que, para todo $ x \in A $, se cumple que $ x \in R: xRx $ y $ x \in S: xSx $.
+- La relación $ R \cup S $ contiene todos los pares que están en $ R $ o en $ S $. Dado que para todo $ x \in A $ se cumple que $ xRx $ y que $ xSx $ (ambas son reflexivas), se cumple que $ xR \cup Sx $.
+- La relación $ R \cap S $ contiene todos los pares que están en $ R $ y en $ S $. Como R y S son reflexivas para todo $ x \in A $, se cumple que $ xR \cap Sx $. 
+
+### (c) Si R y S son simétricas entonces $ R ∪ S $ y $ R ∩ S $ también lo son.
+
+Por hipótesis, tenemos que para todo $ x \in A $, se cumple que $ (x,y) \in R: xRy \to yRx $ y que $ (x,y) \in S: xSy \to ySx $.
+- La relación $ R \cup S $ contiene todos los pares que están en $ R $ o en $ S $. Como ambas relaciones son simétricas, si $ xR \cup Sy $ entonces también se da que $ yR \cup Sx $.
+- La relación $ R \cap S $ contiene todos los pares que están en ambas relaciones $ R $ y $ S $. Como $ R $ y $ S $ son simétricas, si $ xR \cap Sy $, entonces también se da que $ yR \cap Sx $.
 
 ## 18. Establecer las propiedades de las siguientes relaciones en H el conjunto de los seres humanos:
 
-### (a) Sea R la relaci´on en H definida por xRy si y s´olo si x es hermano de y
+### (a) Sea R la relación en H definida por xRy si y sólo si x es hermano de y
 
-### (b) Sea R la relaci´on en H definida por xRy si y s´olo si x es hijo de y
+- No es reflexiva porque una persona no es su propio hermano. No se cumple que para todo $ x \in H: xRx $.
+- Es simétrica, porque si $ x $ es hermano de $ y $, entonces $ y $ también es hermano de $ x $. Formalmente: $ xRy \to yRx $.
+- No es antisimétrica, no se da que para todo $ x,y \in R: xRy \land yRx \to x = y  $. Si $ x $ es hermano de $ y $ e $ y $ es hermano de $ x $, no implica que $ x = y $ (son distintas personas).
+- No es transitiva. Que $ x $ sea hermano de $ y $ e $ y $ sea hermano de $ z $ no implica que $ x $ sea hermano de $ z $. No se cumple que para todo $ x,y,z \in R: xRy \land yRz \to xRz $.
 
-### (c) Se dice que una persona a es descendiente de una persona b si es hijo, nieto, bisnieto, etc.. R es la relaci´on en H definida por xRy si y s´olo si x es descendiente de y
+### (b) Sea R la relación en H definida por xRy si y sólo si x es hijo de y
+
+- No es reflexiva, no se da que para todo $ x \in H: xRx $. Una persona no puede ser su propio hijo.
+- No es simétrica, no se da que para todo $ (x,y) \in H: xRy \to yRx $. Si $ x $ es hijo de $ y $, no es verdad que $ y $ sea hijo de $ x $.
+- Es antisimétrica. Si $ x $ es hijo de $ y $ e $ y $ es hijo de $ x $, esto implicaría que $ x = y $, lo cuál es imposible en el conjunto $ H $ (una persona no puede ser su propio hijo).
+- No es transitiva. Si $ x $ es hijo de $ y $ e $ y $ es hijo de $ z $, no implica que $ x $ sea hijo de $ z $ (sino que $ x $ sería nieto de $ z $).
+
+### (c) Se dice que una persona a es descendiente de una persona b si es hijo, nieto, bisnieto, etc.. R es la relación en H definida por xRy si y sólo si x es descendiente de y.
+
+- No es reflexiva. Una persona no es su propio descendiente.
+- No es simétrica. Si $ x $ es descendiente de $ y $, no se cumple que $ y $ es descendiente de $ x $.
+- Es antisimétrica. Si $ x $ es descendiente de $ y $ y $ y $ es descendiente de $ x $ entonces $ x = y $ son iguales. Esto no tiene sentido en el conjunto de humanos, por lo que el antecedente es falso y la implicancia verdadera.
+- Es transitiva. Si $ x $ es descendiente de $ y $ e $ y $ es descendiente de $ z $, entonces es verdad que $ x $ es descendeinte de $ z $.
+  - Si $ x $ es hijo de $ y $ e $ y $ es hijo de $ z $, entonces $ x $ es nieto de $ z $.
 
 ## 19. Establecer las propiedades de las siguientes relaciones:
 
-### (a) Sea N el conjunto de los n´umeros naturales. Sea ≤ la relaci´on en N dada por x ≤ y si y s´olo si x es menor o igual a y
+### (a) Sea N el conjunto de los números naturales. Sea ≤ la relación en N dada por x ≤ y si y sólo si x es menor o igual a y
 
-### (b) Sea N el conjunto de los n´umeros naturales. Sea | la relaci´on en N dada por x|y si y s´olo si x divide a y
+- Es reflexiva, para todo $ x \in \N $, se cumple que $ x \le x $ (cualquier natural es menor o igual que sí mismo).
+- No es simétrica. No se cumple que para todo $ (x,y) \in \N: x \le y \to y \le x $.
+  - Ejemplo: Es cierto que $ 2 \le 5 $ pero no es cierto que $ 5 \le 2 $.
+- Es antisimétrica. Se cumple que para todo $ (x,y) \in \N: x \le y \land y \le x \to x = y $. Si se cumple la relación mutuamente para dos números, necesariamente son iguales.
+- Es transitiva. Se cumple que para todo $ (x,y,z) \in \N: x \le y \land y \le z \to x \le z $.
+  - Si $ 2 \le 5 $ y $ 5 \le 8 $, entonces $ 2 \le 8 $.
+
+### (b) Sea N el conjunto de los números naturales. Sea | la relación en N dada por x|y si y sólo si x divide a y.
+
+- Es reflexiva. Para todo $ x \in \N: x|x $, ya que cualquier natural se divide así mismo (con $ c = 1 $).
+- No es simétrica. No se cumple que para todo $ (x,y) \in \N: x|y \to y|x $.
+  - Contrajemplo: Se da que 2|6 pero no que 6|2.
+- Es antisimétrica. Para todo $ x,y \in \N: x|y \land y|x \to x = y $. Si x divide a y (y vicerversa), ambos son necesariamente iguales.
+- Es transitiva. Para todo $ x,y,z \in \N: x|y \land y|z \to x|z $. Si 2|6 y 6|12 entonces 2|12.
 
 ### (c) Igual al anterior pero en el conjunto de los enteros.
 
-## 20. Dado un conjunto de n´umeros reales A probar que la relaci´on sobre A × A dada por (a, b)R(c, d) si y s´olo si a ≤ c y b ≤ d es un orden. Es total?
+Es igual que la anterior solo que no es antisimétrica. Si x|y e y|x no implica que x = y.
+- Contraejemplo: Se cumple que 3|-3 y -3|3, pero no son iguales.
 
-21. Analizar que tipo de orden es el usual en el conjunto de los n´umeros rales. ¿qu´e pasa
-con los n´umeros complejos?¿est´an ordenados?
-22. Probar que el orden lexicogr´afico es un orden total
-23. Sea S = {a, b, c} y sea A = P (S) el conjunto de partes de S. Mostrar que A est´a
-parcialmente ordenado por el orden ⊂ (inclusi´on de conjuntos).
-Hallar el diagrama de Hasse.
-3
-24. Sea D12 = {1, 2, 3, 4, 6, 12} (el conjunto de los divisores de 12). Hallar el diagrama de
-Hasse de D12 con la relaci´on ”divide”
-25. Describa las parejas ordenadas por las relaciones de cada uno de los siguientes diagra-
-mas de Hasse. Determinar, si existen, los elementos m´aximo, m´ınimo y cotas inferiores
-y superiores
-a
-b c d e f
-g h i
-j
-1
-a b c d
-0
+## 20. Dado un conjunto de números reales A probar que la relación sobre A × A dada por (a,b)R(c,d) si y sólo si a ≤ c y b ≤ d es un orden. Es total?
+
+Para que una relación sea un orden parcial, debe ser reflexiva, antisimétrica y transitiva.
+- Es reflexiva. Se cumple que para todo $ a,b \in A \times A $ se cumple $ (a,b)R(a,b) $. Por la definción de $ R $, se cumple que $ a \le a \land b \le b $.
+- Es antisimétrica. Se cumple que para todo $ (a,b),(c,d) \in A \times A: (a,b)R(c,d) \land (c,d)R(a,b) \to (a,b) = (c,d) $.
+  - Si $ (a,b)R(c,d) $, entonces $ a \le c \land b \le d $.
+  - Si $ (c,d)R(a,b) $, entonces $ c \le a \land d \le b $.
+  - Entonces $ a = c \land b = d $, es decir, $ (a,b) = (c,d) $.
+- Es transitiva. Se cumple que para todo $ (a,b),(c,d),(e,f) \in A \times A: (a,b)R(c,d) \land (c,d)R(e,f) \to (a,b)R(e,f) $.
+  - Si $ (a,b)R(c,d) $, entonces $ a \le c $ y $ b \le d $.
+  - Si $ (c,d)R(e,f) $, entonces $ c \le e $ y $ d \le f $.
+  - Como $ \le $ es transitiva en $ \R $, se da que $ a \le e $ y $ b \le f $. Por lo tanto, se cumple que $ (a,b)R(e,f) $.
+La relación $ R $ es reflexiva, antisimétrica y transitiva, por lo que es un orden parcial.
+Una relación es de orden total si para todo $ (a,b),(c,d) \in A \times A $, se cumple que $(a,b)R(c,d)$ o $(c,d)R(a,b)$.
+  - En este caso, para que $ R $ sea un orden total, debe ser cierto que dos pares $ (a,b) $ y $ (c,d) $, siempre se cumpla que $ a \le c \land b \le d $ o $ c \le a \land d \le b $.
+  - Contraejemplo: Sea $ (a,b) = (1,2) $ y $ (c,d) = (2,1) $, no se cumple que $ 1 \le 2 \land 2 \le 1 $ ni que $ 2 \le 1 \land 1 \le 2 $.
+  - Por lo tanto, $ R $ es un orden parcial pero no un orden total.
+
+## 21. Analizar que tipo de orden es el usual en el conjunto de los números reales. ¿qué pasa con los números complejos? ¿están ordenados?
+
+El orden usual en los números reales es la relación $ \le $. Sus propiedades son:
+- Reflexiva: Para todo $ x \in \R $, se cumple que $ x \le x $.
+- Antisimétrica: Para todo $ x,y \in \R $, se cumple que $ x \le y \land y \le x \to x = y $.
+- Transitiva: Si $ x \le y $ y $ y \le z $, entonces se da que $ x \le z $.
+- Para todo $ x,y \in \R $, se cumple que $ x \le y $ o que $ y \le x $. Lo que significa que cualquier par de números reales es comparable.
+Por lo tanto, la relación $ \le $ en $\R$ es un orden total, ya que todos los números reales son comparables entre sí.
+
+Para los números complejos, no hay un orden natural que sea compatible con su estructura algebraica.
+- Para que un conjunto esté ordenado totalmente, cualquier par debe ser comparable. No podemos establecer un orden total en $\C$, ya que tienen una parte real y una parte imaginaria.
+
+## 22. Probar que el orden lexicográfico es un orden total
+
+Para probar que el orden lexicográfico es un orden total, debe ser un orden parcial (ser reflexiva, antisimetrica y transitiva) y que sea total.
+- Es reflexiva. Para todo $ (a,b) \in A \times A $, se cumple que $ (a,b) \le_{lex} (a,b) $.
+  - $ a \le a $ y $ b \le b $.
+  - Lo que implica que $ (a,b) \le_{lex} (a,b) $.
+- Es antisimétrica. Se cumple que para todo $ (a_1,b_1),(a_2,b_2) \in A \times A $, se cumple que $ (a_1,b_1) \le_{lex} (a_2,b_2) \land (a_2,b_2) \le_{lex} (a_1,b_1) \to (a_1,b_1) = (a_2,b_2) $.
+  - Si $ (a_1,b_1) \le_{lex} (a_2,b_2) $, significa que $ a_1 < a_2 $ o $ a_1 = a_2 \land b_1 < b_2 $.
+  - Si $ (a_2,b_2) \le_{lex} (a_1,b_1) $, significa que $ a_2 < a_1 $ o $ a_2 = a_1 \land b_2 < b_1 $.
+  - Si ambas condiciones son verdaderas, no puede pasar que $ a_1 < a_2 $ y $ a_2 < a_1 $. Por lo tanto, necesariamente es verdadero que $ a_1 = a_2 $ y $ b_1 = b_2 $.
+  - Esto implica que $ (a_1,b_1) = (a_2,b_2) $.
+- Es transitiva. Se cumple que para todo $ (a_1,b_1),(a_2,b_2),(a_3,b_3) \in A \times A $, se cumple que $ (a_1,b_1) \le_{lex} (a_2,b_2) \land (a_2,b_2) \le_{lex} (a_3,b_3) \to (a_1,b_1) \le_{lex} (a_3,b_3) $.
+  - Si $ (a_1,b_1) \le_{lex} (a_2,b_2) $, entonces $ a_1 < a_2 $ o $ a_1 = a_2 \land b_1 \le b_2 $.
+  - Si $ (a_2,b_2) \le_{lex} (a_3,b_3) $, entonces $ a_2 < a_3 $ o $ a_2 = a_3 \land b_2 \le b_3 $.
+  - Si $ a_1 < a_2 $ y $ a_2 < a_3 $, por la transitividad de $\le$ en $A$, vale que $ a_1 < a_3 $.
+  - Si $ a_1 = a_2 $ y $ a_2 = a_3 $, entonces $ a_1 = a_3 $ y también $ b_1 < b_2 < b_3 $, lo que implica que $ b_1 < b_3 $.
+  - Por lo tanto, se da que $ (a_1,b_1) \le_{lex} (a_3,b_3) $
+- Es total si para todo $ (a_1,b_1),(a_2,b_2) \in A \times A $, se cumple que $ (a_1,b_1) \le_{lex} (a_2,b_2) $ o $ (a_2,b_2) \le_{lex} (a_1,b_1) $.
+  - Como $\le$ es un orden total en A, siempre podemos comparar $ a_1 $ y $ a_2 $.
+  - Si $ a_1 < a_2 $, entonces $ (a_1,b_1) \le_{lex} (a_2,b_2) $.
+  - Si $ a_1 = a_2 $, entonces comparamos $ b_1 $ y $ b_2 $. Vamos a tener que $ b_1 \le b_2 $ o viceversa.
+  - Por lo tanto, el orden lexicográfico es un orden total.
+
+## 23. Sea S = {a, b, c} y sea A=P(S) el conjunto de partes de S. Mostrar que A está parcialmente ordenado por el orden ⊂ (inclusión de conjuntos). Hallar el diagrama de Hasse.
+
+$$
+A=\{∅,\{a\},\{b\},\{c\},\{a,b\},\{a,c\},\{b,c\},\{a,b,c\}\}
+$$
+
+Verificamos que la relación de inclusión ⊂ es un orden parcial:
+- Reflexividad: Se cumple, ya que todo conjunto está incluido en sí mismo, o sea, $ X ⊂ X $.
+- Antisimétria: Se cumple, ya que si $ X ⊂ Y $ e $ Y ⊂ X $, necesariamente $ X = Y $.
+- Transitiva: Se cumple, si tenemos que $ X ⊂ Y $ e $ Y ⊂ Z $, entonces se cumple que $ X ⊂ Z $.
+
+![A](img/hasse-23.png)
+
+## 24. Sea $ D_{12} = \{1, 2, 3, 4, 6, 12\} $ (el conjunto de los divisores de 12). Hallar el diagrama de Hasse de D12 con la relación "divide”
+
+La relación "divide" es de la forma $ a|b $ ($a$ divide a $b$ sin dejar residuo).
+- El enunciado pide construir un diagrama de Hasse para $D_{12}$, donde la relación "divide" debe ser un orden parcial.
+
+Propiedades de "divide":
+- Reflexividad: Todo número divide a sí mismo, es decir, $x|x$ para todo $ x \in D_{12} $.
+- Antisimetria: Si $a|b$ y $b|a$, entonces necesariamente $a=b$.
+- Transitividad: Si $a|b$ y $b|c$, entonces $a|c$.
+
+![A](img/hasse-24.png)
+
+## 25. Describa las parejas ordenadas por las relaciones de cada uno de los siguientes diagramas de Hasse. Determinar, si existen, los elementos máximo, mínimo y cotas inferiores y superiores
+
+![A](img/hasse-25.png)
+
+<u>Primer diagrama de Hasse:</u>
+- $ j \le g, j \le h, j \le i, g \le b, g \le c, g \le d, h \le d, i \le d, i \le e, i \le f, b \le a, c \le a, d \le a, e \le a, f \le a $.
+- Elemento máximo: $a$.
+- Elemento mínimo: $j$.
+- Cota superior del subconjunto $\{g,c\}$: $a$.
+- Cota inferior del subconjunto $\{g,c\}$: $j$.
+
+<u>Segundo diagrama de Hasse:</u>
+- $ 0 \le a, 0 \le b, 0 \le c, 0 \le d, a \le 1, b \le 1, c \le 1, d \le 1  $.
+- Elemento máximo: $1$.
+- Elemento mínimo: $0$.
+- Cota superior del subconjunto $\{a\}$: 1.
+- Cota inferior del subconjunto $\{a\}$: 0.
+
 26. Sea R una relaci´on de equivalencia en un conjunto no vac´ıo A. Seam a.b ∈ A, entonces
 [a] = [b] si y s´olo si aRb
 27. Determinar si cada una de las siguientes colecciones de conjuntos es una partici´on para
