@@ -183,37 +183,172 @@ Lo dejo para el repaso
 
 ## 6. Determinar si las siguientes relaciones definidas en A = {a, b, c, d} son reflexivas, simétricas, antisimétricas y transitivas:
 
-### R0 = ∅
+### $ R_0 = ∅ $
 
-### R1 = {(a, a); (a, b); (d, c); (c, d)}
+No es reflexiva porque que para todo $ x \in A: xR_0x $.
+- Contraejemplo: $ a \in A $ pero $ (a,a) \notin R_0 $.
 
-### R2 = {(a, a); (b, b); (a, b); (b, a); (d, d); (c, c)}
+Es simétrica, para todo $ (x,y) \in A: xR_0y \to xR_0y $.
+- No se cumple que $ xR_0y $ (el conjunto vacío no tiene elementos), por lo que el consecuente siempre es falso y la implicancia siempre se cumple. Por lo tanto, es simétrica.
 
-### R3 = {(a, a); (a, b); (b, a); (b, c); (c, b); (b, b)}
+Es antisimétrica, para todo $ (x,y) \in A: xR_0y \land yR_0x \to x = y $
+- Como el conjunto vacío no tiene elementos, no se cumple $ xR_0y $ ni $ yR_0x $, por lo que el consecuente siempre es falso y la implicancia se cumple.
+
+Es transitiva, para todo $ (x,y,z) \in A: xR_0y \land yR_0z \to xR_0z $.
+- Como el conjunto vacío no tiene elementos, no se cumple $ xR_0y $ ni $ yR_0z $, por lo que el consecuente es falso y la implicancia se cumple trivialmente.
+
+### $ R_1 = \{(a, a); (a, b); (d, c); (c, d)\} $
+
+No es reflexiva, no se cumple que para todo $ x \in A: xR_1x $.
+- Contraejemplo: Se cumple que $ d \in A $ pero no que $ (d,d) \in R_1 $.
+
+No es simétrica, no se cumple que para todo $ (x,y) \in A: xR_1y \to yR_1x $.
+- Contraejemplo: Se cumple que $ \{ (a,b) \} \in R_1 $ pero no se cumple que $ \{(b,a)\} \in R_1 $.
+
+Tampoco es antisimétrica, no se cumple que para todo $ (x,y) \in A: xR_1y \land yR_1x \to x = y $.
+- Contraejemplo: Se cumple que $ \{(c,d)\} \in R_1 \land \{(d,c)\} \in R_1 $ pero no se cumple que $ c = d $.
+
+No es transitiva, no se cumple que para todo $ (x,y,z) \in A: xR_1y \land yR_1z \to xR_1z $.
+- Contraejemplo: Se cumple que $ \{(d,c)\} \in R_1 \land \{(c,d)\} \in R_1 $ pero no se cumple que $ \{(d,d)\} \in R_1 $.
+
+### $ R_2 = \{(a, a); (b, b); (a, b); (b, a); (d, d); (c, c)\} $
+
+La relación es reflexiva, se cumple para todo $ x \in A $ que $ xR_2x $.
+- $ a \in A $ y se cumple $ (a,a) \in R_2 $
+- $ b \in A $ y se cumple $ (b,b) \in R_2 $
+- $ c \in A $ y se cumple $ (c,c) \in R_2 $
+- $ d \in A $ y se cumple $ (d,d) \in R_2 $
+
+Es simétrica, se cumple para todo $ (x,y) \in A: xR_2y \to yR_2x $.
+- $ aR_2a \to aR_2a $
+- $ bR_2b \to bR_2b $
+- $ aR_2b \to bR_2a $
+- $ bR_2a \to aR_2b $
+- $ dR_2d \to dR_2d $
+- $ cR_2c \to cR_2c $ 
+
+La relación no es antisimétrica, ya que no se cumple que para todo $ (x,y) \in A: xR_2y \land yR_2x \to x = y $.
+- Contraejemplo: Se cumple que $ (a,b) \in xR_2y \land (b,a) yR_2x $ pero no se cumple que $ a = b $.
+
+Es transitiva, se cumple que para todo $ (x,y,z) \in A: xR_2y \land yR_2z \to xR_2z $.
+- Se cumple $ xR_2y $, puesto que $ (a,b) \in R_2 $.
+- Se cumple $ yR_2z $, puesto que $ (b,a) \in R_2 $.
+- También se cumple que $ xR_2z $, ya que $ (a,a) \in R_2 $.
+
+### $ R_3 = \{(a, a); (a, b); (b, a); (b, c); (c, b); (b, b)\} $
+
+La relación no es reflexiva, no se cumple que para todo $ x \in A: xR_3x $
+- Contraejemplo: Se cumple que $ c \in A $ pero no que $ (c,c) \in R_3 $.
+
+La relación es simétrica, ya que se cumple que para todo $ (x,y) \in A: xR_3y \to yR_3x $.
+
+La relación no es antisimétrica, no se cumple que para todo $ (x,y) \in A: xR_3y \land yR_3x \to x = y $.
+- Contraejemplo: Se cumple que $ (b,c) \in R_3 \land (c,b) \in R_3 $ pero no es cierto que $ b = c $.
+
+La relación no es transitiva, ya que no se cumple que para todo $ (x,y,z) \in A: xR_3y \land yR_3z \to xR_3z $.
+- Contraejemplo: Se da que $ (a,b) \in R_3 \land (b,a) \in R_3 $ pero no que $ (a,c) \in R_3 $.
 
 ### R4 = A × A
 
+Para repasar.
+
 ## 7. Escribir la matriz y los digrafos asociados a las relaciones anteriores
+
+<u>Para $R_1$:</u>
+
+| | a | b | c | d |
+|-|---|---|---|---|
+|a| 1 | 1 | 0 | 0 |
+|b| 0 | 0 | 0 | 0 |
+|c| 0 | 0 | 0 | 1 |
+|d| 0 | 0 | 1 | 0 |
+
+![digrafos](img/ej7/R1.png)
+
+<u>Para $R_2$:</u>
+
+| | a | b | c | d |
+|-|---|---|---|---|
+|a| 1 | 1 | 0 | 0 |
+|b| 1 | 1 | 0 | 0 |
+|c| 0 | 0 | 0 | 1 |
+|d| 0 | 0 | 0 | 1 |
+
+![digrafo](img/ej7/R3.png)
+
+<u>Para $R_3$:</u>
+
+| | a | b | c | d |
+|-|---|---|---|---|
+|a| 1 | 1 | 0 | 0 |
+|b| 1 | 1 | 1 | 0 |
+|c| 0 | 1 | 0 | 0 |
+|d| 0 | 0 | 0 | 0 |
+
+![digrafo](img/ej7/R4.png)
 
 ## 8. Sea A = {a, b, c, d}
 
-### (a) Dar un ejemplo de una relaci´on R no reflexiva en A
+### (a) Dar un ejemplo de una relación R no reflexiva en A
 
-### (b) Dar un ejemplo de una relaci´on R sim´etrica en A
+$$
+R = \{ (a,b); (b,c); (c,d); (d,a) \}
+$$
 
-### (c) Dar un ejemplo de una relaci´on R no transitiva en A
+### (b) Dar un ejemplo de una relación R simétrica en A
 
-### (d) Dar un ejemplo de una relaci´on R no sim´etrica en A
+$$
+R = \{ (a,b); (b,a); (a,c); (c,a); (a,d); (d,a); (b,c); (c,b); \}
+$$
 
-### (e) Dar un ejemplo de una relaci´on R antisim´etrica en A
+### (c) Dar un ejemplo de una relación R no transitiva en A
 
-## 9. Demostrar que si R es sim´etrica y transitiva y aRb para ciertos a y b, entonces aRa y bRb.
+$$
+R = \{ (a,b); (b,a); (b,c); (c,d); \}
+$$
 
-## 10. Sea A un conjunto arbirtario. Sea R = ∆A (diagonal de A) . Analizar qu´e propiedades tiene R.
+### (d) Dar un ejemplo de una relación R no simétrica en A
 
-## 11. Proponer una relaci´on en el conjunto de los n´umeros naturales. Mostrar que propiedades tiene (reflexividad, simetr´ıa, etc...)
+$$
+R = \{ (a,a); (a,b); (b,a); (a,c); (d,d); (c,c) \}
+$$
 
-## 12. Proponer una relaci´on en el conjunto de los alumnos de Inform´atica. Mostrar que propiedades tiene (reflexividad, simetr´ıa, etc...)
+### (e) Dar un ejemplo de una relación R antisimétrica en A
+
+$$
+R = \{ (a,a); (a,b); (b,b); (d,c) \}
+$$
+
+## 9. Demostrar que si R es simétrica y transitiva y aRb para ciertos a y b, entonces aRa y bRb.
+
+La simetría nos dice que $ aRb $ entonces $ bRa $.
+- Entonces, al tener aRb y R ser simétrica, tenemos que $ bRa $.
+
+La transitividad nos dice que $ xRy \land yRz \to xRz$
+- Entonces, al ser R transitiva y tener que $ aRb $ y $ bRa $ entonces se da que $ aRa $.
+- Trivialmente para el caso de $ bRb $, al ser R transitiva y tener que $ bRa $ y $ aRb $, entonces se cumple que $ bRb $.
+
+## 10. Sea A un conjunto arbirtario. Sea R = ∆A (diagonal de A). Analizar qué propiedades tiene R.
+
+Es reflexiva, ya que cada elemento de la diagonal de A se relaciona consigo mismo, cumpliendo que para todo $ x \in A $ tal que $ xRx $.
+
+Es simétrica, se cumple que para todo $ (x,y) \in \delta A : xRy \to yRx $.
+- Para $ a, b \in A $ tal que $ a = b $, vale que $aRb$ y $bRa$, haciendo que se cumpla $aRb \to bRa$ (antecedente y consecuente verdaderos).
+- Para $ a, b \in A $ tal que $ a \ne b $, no vale $aRb$ ni $bRa$, haciendo que la implicación se cumpla (antecedente y consecuente falsos).
+
+Es antisimétrica, se cumple para todo $ (x,y) \in \delta A: xRy \land yRx \to x = y $.
+- Para $ a, b \in A $ tal que $ a = b $, vale el antecedente $ xRy $ y $ yRx $, por lo tanto la implicancia se cumple.
+- Trivialmente para $ a, b \in A $ tal que $ a \ne b $ (no vale el antecedente ni el consecuente, lo que hace que la implicancia valga).
+
+Es transitiva, se cumple para todo $ x,y,z \in \delta A: xRy \land yRz \to xRz $.
+- Para $ a,b,c \in A $ tal que $ a=b=c $, vale el antecedente $ aRb $ y $ bRc $, también vale el consecuente $ aRc $, por lo tanto la implicancia se cumple.
+- Análogamente para $ a, b \in A $ tal que $ a \ne b \ne c $; $ a = b \ne c $ y $ a \ne b = c $
+
+## 11. Proponer una relación en el conjunto de los números naturales. Mostrar que propiedades tiene (reflexividad, simetría, etc...).
+
+Sacado de la teoría, la divisibilidad en los números naturales es reflexiva, antisimétrica y transitiva.
+
+## 12. Proponer una relación en el conjunto de los alumnos de Informática. Mostrar que propiedades tiene (reflexividad, simetría, etc...)
 
 ## 13. Dada una relaci´on binaria R sobre un conjunto A, se define la relaci´on complemento de R, ¯R por: a ¯Rb si y s´olo si a no est´a relacionada con b por R
 
