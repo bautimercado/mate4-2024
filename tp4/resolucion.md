@@ -696,17 +696,103 @@ $$
 R = \{(a,a), (a,c), (c,a), (b,b), (d,d), (d,e), (e,e), (e,d)\}
 $$
 
-31. Sean A = {1, 2, 3, 4, 5, 6} y R = {(1, 1), (1, 2), (2, 1), (2, 2), (3, 3), (4, 4), (4, 5), (5, 4), (5, 5), (6, 6)}.
-Mostrar que R es una relaci´on de equivalencia y determinar las clases de equivalencia.
-¿ Qu´e partici´on de A induce R ?
-32. Sea ∼ una relaci´on definida en Z × (Z0) dada por: (a, b) ∼ (c, d) si y s´olo si ad = bc
-Probar que es de equivalencia. Hallar la clase de equivalencia del elemento (1, 4) .
-Mostrar que puede identificarse cada clase de equivalencia con un n´umero racional
-(Esta es la forma de construir al conjunto de los racionales como conjunto cociente).
-33. Hallar las clases de equivalencia m´odulo 3 y 5 de los n´umeros 387, 25 y 649
-34. Hallar las respectivas clases de 13, 6, 11 y −49 m´odulo 4
-35. Averiguar si son congruentes m´odulo 3 entre s´ı los siguientes pares de n´umeros: (2, 1024),
-(101, 512), (1501, 1348).
+## 31. Sean A = {1, 2, 3, 4, 5, 6} y R = {(1, 1), (1, 2), (2, 1), (2, 2), (3, 3), (4, 4), (4, 5), (5, 4), (5, 5), (6, 6)}. Mostrar que R es una relación de equivalencia y determinar las clases de equivalencia. ¿Qué partición de A induce R?
+
+Para que $ R $ sea una relación de equivalencia debe ser reflexiva, simétrica y transitiva.
+- Es reflexiva, ya que se cumple que para todo $ x \in A: xRx $. Podemos ver que cada componente se relaciona consigo mismo $ (1,1),...,(6,6) $.
+- Es simétrica, se cumple que para todo $ x,y \in A: xRy \to yRx $. Podemos ver que cada elemento relacionado se relaciona también de manera inversa: $ (1,2), (2,1), (4,5), (5,4) $ 
+- Es transitiva, se cumple que para todo $ x,y,z \in A: xRy \land yRz \to xRz $.
+  - Podemos ver que $ (1,2) \in R $ y $ (2,1) \in R $ y entonces $ (1,1) \in R $. Lo mismo para $ (4,5), (5,4), (4,4) $.
+Al tener las 3 propiedades, podemos decir que $ R $ es una relación de equivalencia.
+Para determinar las clases de equivalencia inducidas por $ R $ tenemos que agrupar los elementos que se relacionan entre si, entonces obtenemos:
+- $ \bar{1} = \{1,2\} $
+- $ \bar{3} = \{3\} $
+- $ \bar{4} = \{4,5\} $
+- $ \bar{6} = \{6\} $
+
+Entonces, la partición de $ A $ que induce $ R $ es:
+
+$$
+P = \{ \{1,2\}, \{3\}, \{4,5\}, \{6\} \}
+$$
+
+## 32. Sea ∼ una relación definida en Z × (Z0) dada por: (a, b) ∼ (c, d) si y sólo si ad = bc Probar que es de equivalencia. Hallar la clase de equivalencia del elemento (1, 4). Mostrar que puede identificarse cada clase de equivalencia con un número racional (Esta es la forma de construir al conjunto de los racionales como conjunto cociente).
+
+Para que la relación ~ se de equivalencia debe ser reflexiva, simétrica y transitiva.
+- Para que sea reflexiva hay que ver que se cumpla que $ (a,b) ~ (a,b) $ para cualquier $ (a,b) \in Z \times Z0 $. Según la definición de la relación sería $ ab = ab $, lo cuál es cierto. Por lo tanto, la relación es reflexiva.
+- Para que sea simétrica, hay que probar que si $ (a,b) ~ (c,d) $ entonces $ (c,d) ~ (a,b) $.
+  - Al tener $ (a,b) ~ (c,d) $ tenemos que $ ad = bc $.
+  - Entonces, lo de arriba implica que $ (c,d) ~ (a,b) $, es decir, $ cb = da $, lo cuál es cierto (la igualdad es conmutativa).
+  - Por lo tanto, ~ es simétrica.
+- Para que sea transitiva, se debe cumplir que $ (a,b) ~ (c,d) \land (c,d) ~ (e,f) \to (a,b) ~ (e,f) $.
+  - Si $ (a,b) ~ (c,b) \to ad = bc $, y si $ (c,d) ~ (e,f) \to cf = de $.
+  - Podemos despejar $ d $ y $ f $ en la primera y segunda igualdad, es decir:
+    - $ ad = bc \to a = \frac{bc}{d} $
+    - $ cf = ed \to c = \frac{de}{f} $
+  - Sustituyo $ c $ en la primera igualdad:
+    - $ a = \frac{b(de/f)}{d} \to a = \frac{bde}{df} \to a = \frac{be}{f} \to af = be $.
+  - Entonces, llegamos a que $ af = be $, por lo tanto la relación es transitiva.
+Se demostró que ~ es reflexiva, simétrica y transitiva. Por lo tanto, es una relación de equivalencia.
+La clase de equivalencia de $ (a,b) $ en ~ son todos aquellos pares $ (c,d) \in Z \times Z0 $ tales que $ (a,b) ~ (c,d) $
+- En este caso, queremos encontrar la clase de equivalencia de $ (1,4) $, o sea, todos los pares $ (c,d) $ tales que $ 1d = 4c $
+- Se puede simplificar a $ d = 4c $.
+- La clase de equivalencia podría ser: $ \bar{(1,4)} = \{(c,4c): c in Z\} $
+- Cualquier par $ (c,d) $ en la clase de equivalencia de $ (1,4) $ es tal que $ d $ es igual a $ 4c $.
+Ahora, la idea es que cada clase de equivalencia se corresponda a un número racional.
+- Un número racional $ \frac{a}{b} $ se representa por una clase de equivalencia en la forma $ (a,b) $ con la relación ~.
+- La clase de equivalencia $(a,b)$ contiene todos los pares $(c,d)$ tales que $ \frac{a}{b} = \frac{c}{d} $, lo cuál implica que $ ad=bc $.
+- En el caso de $ (1,4) $, esto significa que todos los pares $(c,d)$ en su clase de equivalencia satisfacen $ 1d = 4c $, o $ d=4c $.
+- Todos los pares $(c,d)$ en la clase de equivalencia de $(1,4)$ son tales que $ \frac{c}{d} = \frac{1}{4} $. Estos pares incluyen: $ (1,4),(2,8),(3,12),(-1,-4),(-2,-8),... $.
+- La clase de equivalencia $(1,4)$ se correspondería con el número racional $\frac{1}{4}$, ya que todos los pares $(c,4c)$ representan el mismo número racional $ \frac{c}{4c} = \frac{1}{4} $.
+
+## 33. Hallar las clases de equivalencia módulo 3 y 5 de los números 387, 25 y 649
+
+La clase de equivalencia de un número módulo 3 es el conjunto de todos los números que tienen el mismo resto cuando se los divide por 3. En español: Vamos a tener 3 clases de equivalencia en el módulo de 3. $ \bar{0}, \bar{1}. \bar{2} $.
+- $ 387 = 3 * 129 + 0 $
+  - El resto es 0, por lo tanto $ 387 \in \bar{0} $.
+- $ 25 = 3 * 8 + 1 $
+  - El resto es 1, por lo tanto $ 25 \in \bar{1} $
+- $ 649 = 3 * 216 + 1 $
+  - El resto es 1, por lo tanto $ 649 \in \bar{1} $
+
+Para el módulo 5 es lo mismo, hay dividir los números por 5 y en función de su resto vamos viendo a qué clase de equivalencia pertenecen.
+- $ 387 = 5 * 77 + 2 $
+  - El resto es 2, por lo tanto $ 387 \in \bar{2} $.
+- $ 25 = 5 * 5 + 0 $
+  - El resto es 0, por lo tanto $ 25 \in \bar{0} $
+- $ 649 = 5 * 129 + 4 $
+  - El resto es 4, por lo tanto $ 649 \in \bar{4} $
+
+## 34. Hallar las respectivas clases de 13, 6, 11 y −49 módulo 4
+Hay que calcular el resto de la división entre esos números y 4, ahí vamos a ver a qué clases pertenecen.
+- $ 13 = 4 * 3 + 1 $
+  - El resto es 1, por lo tanto $ 13 \in \bar{1} $.
+- $ 6 = 4 * 1 + 2 $
+  - El resto es 2, por lo tanto $ 6 \in \bar{2} $.
+- $ 11 = 4 * 2 + 3 $
+  - El resto es 3, por lo tanto $ 3 \in \bar{3} $.
+- $ -49 = 4 * (-12) - 1 $
+  - El resto no puede ser negativo. Así que lo sumamos con el módulo de 4, obteniendo $ -12 * 4 + 3 $.
+  - Al hacer esta modificación, tenemos que ajustar el cociente (ya que $ -12 * 4 + 3 = -45 $ ).
+  - Por lo tanto, nos quedaría $ -49 = -13 * 4 + 3 $.
+  - El resto es 3, por lo tanto $ -49 \in \bar{3} $
+
+## 35. Averiguar si son congruentes módulo 3 entre sí los siguientes pares de números: (2, 1024), (101, 512), (1501, 1348).
+
+Dos números son congruentes módulo $m$ si y sólo si sus restos en la división por $m$ son iguales.
+- $(2,1024)$
+  - $ 2 = 0 * 3 + 2 $
+  - $ 1024 = 341 * 3 + 1 $
+  - Su resto no es el mismo, por lo tanto no se cumple que $ 2 \equiv_3 1024 $.
+- $(101, 512)$
+  - $ 101 = 33 * 3 + 2 $
+  - $ 512 = 170 * 3 + 2 $
+  - Su resto es el mismo, por lo tanto se cumple que $ 101 \equiv_3 512 $.
+- $(1501,1348)$
+  - $ 1501 = 500 * 3 + 1 $
+  - $ 1348 = 449 * 3 + 1 $
+  - Su resto es el mismo, por lo tanto se cumple que $ 1501 \equiv_3 1348 $
+
 36. Analizar para qu´e valores de m se hacen verdaderas las siguientes congruencias:
 5 ≡m 4, 1 ≡m 0, 1197 ≡m 286, 3 ≡m −3
 37. Probar que la relaci´on de congruencia m´odulo m es una relaci´on de equivalencia
