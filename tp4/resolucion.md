@@ -616,25 +616,86 @@ Propiedades de "divide":
 - Cota superior del subconjunto $\{a\}$: 1.
 - Cota inferior del subconjunto $\{a\}$: 0.
 
-26. Sea R una relaci´on de equivalencia en un conjunto no vac´ıo A. Seam a.b ∈ A, entonces
-[a] = [b] si y s´olo si aRb
-27. Determinar si cada una de las siguientes colecciones de conjuntos es una partici´on para
-el conjunto A = {1, 2, 3, 4, 5, 6, 7, 8, }
-• {{4, 5, 6}; {1, 8}; {2, 3, 7}}
-• {{4, 5}; {1, 3, 4}; {6, 8}; {2, 7}}
-• {{1, 3, 4}; {2, 6}; {5, 8}}
-28. Considerando el conjunto A de los alumnos que cursan Mate 4, indicar cu´ales de las
-siguientes son particiones de A.
-(a) P = {{alumnos que aprobaron CADP}; {alumnos que aprobaron OC};
-{alumnos que no aprobaron ISO ni Redes}}
-(b) P = {{alumnos que est´an cursando Programaci´on Distribuida }; {alumnos que cursan Sistemas y Organiz
-{alumnos que est´an cursando L´ogica e Inteligencia Artificial}}
-29. Sean A = {1, 2, 3, 4} y R = {(1, 1), (1, 2), (2, 1), (2, 2), (3, 3), (3, 4), (4, 3), (4, 4)}.
-Mostrar que R es una relaci´on de equivalencia y hallar las clases de equivalencia.
-¿ Cu´al es la partici´on que induce R sobre A ?
-30. Dados el conjunto A = {a, b, c, d, e} y una partici´on P = {{a, c}; {b}; {d, e}} .
-Escribir por extensi´on la relaci´on de equivalencia sobre A inducida por P .
-4
+## 26. Sea R una relación de equivalencia en un conjunto no vacío A. Sean a,b ∈ A, entonces [a] = [b] si y sólo si aRb
+
+Si $aRb$ entonces $[a]=[b]$.
+- Del enunciado tenemos que $a,b \in R $.
+- Al ser R una relación de equivalencia, es reflexiva, simétrica y transitiva.
+- Consideramos las clases de equivalente $[a]$ y $[b]$ donde:
+  - $[a]$ es el conjunto de todos los elementos de A relacionados con $a$ bajo la relación de $R$, o sea, $ [a] = \{x \in A: xRa\} $
+  - Trivialmente con $[b]$, $ [b] = \{x \in A: xRb\} $
+- Tomamos un elemento $ x \in [a] $, es decir $ xRa $. Del enunciado tenemos que $ aRb $, y al ser $ R $ transitiva, entonces $ xRb $. Por lo tanto, $ x \in [b] $, lo que implica que $ [a] \sube [b] $.
+- Tomemos un elemento $ y \in [b] $, es decir $ yRb $. Del enunciado tenemos que $ aRb $, y al ser $ R $ simétrica, podemos decir que $ bRa $. Con la transitividad podemos ver que $yRb$ y $bRa$, entonces $yRa$, por lo que $ y \in [a] $, lo que implica que $ [b] \sube [a] $.
+- Podemos ver que $ [a] \sube [b] $ y $ [b] \sube [a] $, por lo tanto $ [a] = [b] $.
+
+Si $ [a] = [b] $, entonces $aRb$.
+- Partimos de que las clases de equivalencia de a y b son iguales.
+- Como $ a \in [a] $ (por reflexividad de R, ya que $aRa$) y teniendo que $ [a] = [b] $, entonces $ a \in [b] $.
+- Entonces, tenemos que $ a \in [b] $, y por definición de clase de equivalencia, tenemos que $ aRb $.
+
+## 27. Determinar si cada una de las siguientes colecciones de conjuntos es una partición para el conjunto A = {1, 2, 3, 4, 5, 6, 7, 8, }
+
+### {{4, 5, 6}; {1, 8}; {2, 3, 7}}
+
+Es una partición. Se cumple que:
+- Las partes no son vacías.
+- La intersección entre las partes es vacía.
+- La unión entre todas las partes nos da el conjunto A.
+
+### {{4, 5}; {1, 3, 4}; {6, 8}; {2, 7}}
+
+No es una partición válida, ya que la intersección entre la parte 1 y la parte 2 no es vacía.
+
+### {{1, 3, 4}; {2, 6}; {5, 8}}
+
+No es una partición válida, ya que la unión entre todas las partes no nos da el conjunto A (falta el 7).
+
+## 28. Considerando el conjunto A de los alumnos que cursan Mate 4, indicar cuáles de las siguientes son particiones de A.
+
+
+### (a) P = {{alumnos que aprobaron CADP}; {alumnos que aprobaron OC}; {alumnos que no aprobaron ISO ni Redes}}
+
+No es una partición de A, ya que las partes podrían tener alumnos en común (es decir que su intersección no da vacío).
+
+### (b) P = {{alumnos que están cursando Programacióon Distribuida }; {alumnos que cursan Sistemas y Organiz {alumnos que están cursando Lógica e Inteligencia Artificial}}}
+
+No es una partición de A porque la intersección entre las partes no da vacío.
+
+## 29. Sean A = {1, 2, 3, 4} y R = {(1, 1), (1, 2), (2, 1), (2, 2), (3, 3), (3, 4), (4, 3), (4, 4)}. Mostrar que R es una relación de equivalencia y hallar las clases de equivalencia. ¿Cuál es la partición que induce R sobre A ?
+
+Para que $ R $ sea una relación de equivalencia debe ser reflexiva, simétrica y transitiva.
+- Podemos ver que es reflexiva, ya que para todo $ x \in A $ se cumple que $ xRy $.
+  - (1,1), (2,2), (3,3) y (4,4).
+- Es simétrica, se cumple que para todo $ x,y \in A: xRy \to yRx $.
+  - $ (1,2) \in R \to (2,1) \in R $
+  - $ (2,1) \in R \to (1,2) \in R $
+  - $ (3,4) \in R \to (4,3) \in R $
+  - $ (4,3) \in R \to (3,4) \in R $
+- También es transitiva, se cumple que para todo $ x,y,z \in A: xRy \land yRz \to xRz $.
+  - $ (1,2) \in R \land (2,1) \in R \to (1,1) $
+  - $ (3,4) \in R \land (4,3) \in R \to (3,3) $
+Probamos las 3 propiedades, por lo tanto R es una relación de equivalencia.
+Las clases de equivalencia para cada elemento de A:
+- $ \bar{1} = \{x \in A: (1,x) \in R \} = \{1,2\} $, ya que $ (1,1),(1,2) \in R $.
+- $ \bar{2} = \{x \in A: (2,x) \in R \} = \{1,2\} $, ya que $ (2,1),(2,2) \in R $.
+- $ \bar{3} = \{x \in A: (3,x) \in R \} = \{3,4\} $, ya que $ (3,3),(3,4) \in R $.
+- $ \bar{4} = \{x \in A: (4,x) \in R \} = \{3,4\} $, ya que $ (4,3),(4,4) \in R $.
+- Las clases de equivalencia son:
+  - $ \bar{1} = \bar{2} = \{1,2\} $
+  - $ \bar{3} = \bar{4} = \{3,4\} $
+
+Partición inducida por R sobre A: {{1,2},{3,4}}.
+
+## 30. Dados el conjunto A = {a, b, c, d, e} y una partición P = {{a, c}; {b}; {d, e}}. Escribir por extensión la relación de equivalencia sobre A inducida por P .
+
+Podemos ver que dos elementos están relacionados entre sí si pertenecen a la misma parte de la partición, es decir:
+- {a,c}: (a,a), (a,c), (c,a), (c,c).
+- Lo mismo para las otras.
+
+$$
+R = \{(a,a), (a,c), (c,a), (b,b), (d,d), (d,e), (e,e), (e,d)\}
+$$
+
 31. Sean A = {1, 2, 3, 4, 5, 6} y R = {(1, 1), (1, 2), (2, 1), (2, 2), (3, 3), (4, 4), (4, 5), (5, 4), (5, 5), (6, 6)}.
 Mostrar que R es una relaci´on de equivalencia y determinar las clases de equivalencia.
 ¿ Qu´e partici´on de A induce R ?
