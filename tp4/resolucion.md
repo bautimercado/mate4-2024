@@ -547,8 +547,11 @@ El orden usual en los números reales es la relación $ \le $. Sus propiedades s
 - Para todo $ x,y \in \R $, se cumple que $ x \le y $ o que $ y \le x $. Lo que significa que cualquier par de números reales es comparable.
 Por lo tanto, la relación $ \le $ en $\R$ es un orden total, ya que todos los números reales son comparables entre sí.
 
-Para los números complejos, no hay un orden natural que sea compatible con su estructura algebraica.
-- Para que un conjunto esté ordenado totalmente, cualquier par debe ser comparable. No podemos establecer un orden total en $\C$, ya que tienen una parte real y una parte imaginaria.
+Para los números complejos, no hay un orden total pero si un orden parcial.
+- No es total ya que no todos los números complejos son comparables.
+- Podemos basarnos en el orden $ \le $ como en los reales, pero teniendo $ \R \times \R $.
+- Si tengo dos números complejos $ x = a+bi $ e $ y = c+di $ podríamos comparar las partes reales y las partes imaginarias por separado, es decir:
+  - $ (a,b) \le (c,d) $ si y sólo si $ a \le c \land b \le d $.
 
 ## 22. Probar que el orden lexicográfico es un orden total
 
@@ -736,7 +739,7 @@ Se demostró que ~ es reflexiva, simétrica y transitiva. Por lo tanto, es una r
 La clase de equivalencia de $ (a,b) $ en ~ son todos aquellos pares $ (c,d) \in Z \times Z0 $ tales que $ (a,b) ~ (c,d) $
 - En este caso, queremos encontrar la clase de equivalencia de $ (1,4) $, o sea, todos los pares $ (c,d) $ tales que $ 1d = 4c $
 - Se puede simplificar a $ d = 4c $.
-- La clase de equivalencia podría ser: $ \bar{(1,4)} = \{(c,4c): c in Z\} $
+- La clase de equivalencia podría ser: $ \bar{(1,4)} = \{(c,4c): c \in Z\} $
 - Cualquier par $ (c,d) $ en la clase de equivalencia de $ (1,4) $ es tal que $ d $ es igual a $ 4c $.
 Ahora, la idea es que cada clase de equivalencia se corresponda a un número racional.
 - Un número racional $ \frac{a}{b} $ se representa por una clase de equivalencia en la forma $ (a,b) $ con la relación ~.
@@ -793,17 +796,156 @@ Dos números son congruentes módulo $m$ si y sólo si sus restos en la divisió
   - $ 1348 = 449 * 3 + 1 $
   - Su resto es el mismo, por lo tanto se cumple que $ 1501 \equiv_3 1348 $
 
-36. Analizar para qu´e valores de m se hacen verdaderas las siguientes congruencias:
-5 ≡m 4, 1 ≡m 0, 1197 ≡m 286, 3 ≡m −3
-37. Probar que la relaci´on de congruencia m´odulo m es una relaci´on de equivalencia
-38. Probar: todo n´umero es congruente, m´odulo n, con el resto de su divisi´on por n
-39. Probar que dos enteros son congruentes m´odulo m si y s´olo si los respectivos restos de
-su divisi´on por m son iguales.
-40. Probar las siguientes propiedades para todo a, b, c ∈ Z :
-(a) a ≡n a
-(b) a ≡n b ⇒ b ≡n a
-(c) a ≡n b y b ≡n c ⇒ a ≡n c
-(d) a ≡n b ⇔ a + c ≡n b + c
-(e) a ≡n b ⇒ ac ≡n bc
-(f) a ≡n b ⇒ (a, n) = (b, n)
-(g) a ≡n 0 ⇔ n|a
+## 36. Analizar para qué valores de m se hacen verdaderas las siguientes congruencias: $ 5 ≡_m 4$, $1 ≡_m 0$, $1197 ≡_m 286$, $3 ≡_m −3$
+
+Sabemos que $ a \equiv_m b $ si y solo si $ m|a-b $, es decir, que existe un $ k \in \Z : a - b = k * m $.
+- $ 5 \equiv_m 4 $
+  - $ 5 \equiv_m 4 \to m|5-4 \to 5 - 4 = k * m \to 1 = k * m $
+  - Entonces, los valores posibles de $ k $ y $ m $ son:
+    - $ k = 1 $ y $ m = 1 $.
+    - $ k = -1 $ y $ m = -1 $.
+  - Es decir $ k = \pm 1 $ y $ m = \pm 1 $
+- $ 1 \equiv_m 0 $
+  - $ 1 \equiv_m 0 \to m|1-0 \to 1-0 = k * m \to 1 = k*m  $
+  - Similar al inciso anterior, para que la igualdad se cumpla $ k = \pm 1 $ y $ m = \pm 1 $
+- $ 1197 \equiv_m 286 $
+  - $ 1197 \equiv_m 286 \to m|1197-286 \to 1197-286 = k * m \to 911 = k * m $
+  - 911 es primo, los únicos valores que hacen valer la igualdad son:
+    - $ k = 911 $ y $ m = 1 $
+    - $ k = 1 $ y $ m = 911 $
+    - $ k = -911 $ y $ m = -1 $
+    - $ k = -1 $ y $ m = -911 $
+  - Los valores posibles de $ m $ son $ \pm 1 $ y $ \pm 911 $.
+- $ 3 \equiv_m -3 $
+  - $ 3 \equiv_m -3 \to m|3-(-3) \to 3-(-3) = k * m \to 6 = k*m $
+  - Como $ 6 = 3 * 2 * 1 $, los valores que hacen valer la igualdad son:
+    - $ m = 6 $ y $ k = 1 $
+    - $ m = -6 $ y $ k = -1 $
+    - $ m = 1 $ y $ k = 6 $
+    - $ m = -1 $ y $ k = -6 $
+    - $ m = 2 $ y $ k = 3 $
+    - $ m = -2 $ y $ k = -3 $
+    - $ m = 3 $ y $ k = 2 $
+    - $ m = -3 $ y $ k = -2 $
+  - Entonces, los valores posibles de $ m $ son $ \pm 1, \pm 2, \pm 3 $ y $ \pm 6 $.
+
+## 37. Probar que la relación de congruencia módulo m es una relación de equivalencia
+
+Recordar que la relación congruencia módulo m se define como dos números enteros $ a $ y $ b $ y un entero positivo $ m $ donde $ a \equiv_m b $, si y sólo si $ m $ divide a la diferencia entre $ a $ y $ b $.
+Para que sea una relación de equivalencia debe ser reflexiva, simétrica y transitiva.
+- Para que sea reflexiva se debe cumplir que $ a \equiv_m a $ para todo $ a \in \Z $. Lo que significa que $ m $ debe dividir a $ a - a $.
+  - $ m|a - a \to m|0 $.
+  - Cualquier número $ m $ divide a 0, por lo tanto se cumple que $ a \equiv_m a $ y que es reflexiva.
+- Para que sea simétrica se debe cumplir que $ a \equiv_m b \to b \equiv_m a $.
+  - $ a \equiv_m b $ implica que $ m|(a-b) $, es decir, existe un entero $ k $ tal que $ a-b = k*m $
+  - Entonces $ b - a = -k*m $, y dado que $ m |(-km) $, se sigue que $ m|(b-a) $, lo que significa que $ b \equiv_m a $.
+  - Por lo tanto, la relación de congruencia módulo m es simétrica.
+- Para que sea transitiva se debe cumplir que $ a \equiv_m b \land b \equiv_m c \to a \equiv_m c $.
+  - Sabemos que:
+    - $ a \equiv_m b \to m|(a-b) $
+    - $ b \equiv_m c \to m|(b-c) $
+  - Entonces, existen $ k_1,k_2 \in \Z $ tales que:
+    - $ a-b = k_1m $
+    - $ b-c = k_2m $
+  - Si sumamos las ecuaciones tenemos:
+    - $ (a-b) + (b-c) = k_1m+k_2m \to a-c = (k_1+k_2)m $
+  - Por lo tanto, $ m|(a-c) $, lo cuál implica que $ a \equiv_m c $, así que se cumple la transitividad.
+Como la relación de congruencia módulo $ m $ es reflexiva, simétrica y transitiva, por lo tanto es una relación de equivalencia.
+
+## 38. Probar: todo número es congruente, módulo n, con el resto de su división por n
+
+Para demostrar que todo número es congruente, módulo $ n $, con el resto de su división por $ n $, se usa el algoritmo de la división.
+- El algoritmo nos dice para un número entero $ a $ y un entero positivo $ n $, existen números enteros únicos $ c $ y $ r $ tales que: $ a = cn + r $.
+- Se quiere demostrar que $ a \equiv_n r $.
+- Podemos reescribir la ecuación de la siguiente forma: $ a - r = cn $. Esto nos dice que $ n|(a-r) $.
+- Por la definición de la relación de congruencia módulo $ n $, sabemos que si $ n|(a-r) $ entonces $ a \equiv_n r $.
+- Por lo tanto, se demuestra que para cualquier $ a \in \Z $, si lo dividimos por $ n $, el número $ a $ es congruente módulo $ n $ con el resto $ r $ de su división.
+
+## 39. Probar que dos enteros son congruentes módulo m si y sólo si los respectivos restos de su división por m son iguales.
+
+- Dos números enteros $ a $ y $ b $ son congruentes módulo $ m $ si y sólo si $ m $ divide la diferencia $ a - b $.
+
+$$ a \equiv_m b ⟺ m|(a-b) $$
+
+- El resto de la división de $ a $ por $ m $ es el número $ r_a $ tal que:
+
+$$ a = c_am + r_a \quad 0 \le r_a < m $$
+
+- Similar para b con $ r_b $.
+
+Analizamos $ a \equiv_m b \to r_a = r_b $
+- Partiendo de $ a \equiv_m b $ tenemos que $ a-b = km $.
+- Las expresiones de $ a $ y $ b $ según el algoritmo de la divisón son:
+  - $ a = c_am+r_a $
+  - $ b = c_bm+r_b $
+- Sustituyendo en $ a - b = km $:
+$$ (c_am+r_a) - (c_bm+r_b) = km \to (c_a - c_b)m + (r_a-r_b) = km $$
+- Vemos que $ m $ divide al término $ (c_a - c_b)m $, también debe dividir $ r_a - r_b $.
+- Como $ r_a $ y $ r_b $ son restos, el valor de ambos está en el intervalo $ [0,m-1] $, es decir, la única manera que $ m|(r_a-r_b) $ es que $ r_a = r_b $.
+- Entonces, si $ a \equiv_m b \to r_a = r_b $
+
+Analizamos $ r_a = r_b \to a \equiv_m b $
+- Partiendo de que los restos de $ a $ y $ b $ al dividirlos por $ m $ son iguales.
+$$ a = c_am + r_a \quad b = c_bm + r_b \quad r_a = r_b $$
+- Sustituyendo $ r_a = r_b $ en las expresiones:
+$$ a = c_am + r \quad b = c_bm + r $$
+- La diferencia $ a - b $ sería:
+$$ a - b = (c_am + r) - (c_bm + r) \to a-b = (c_a-c_b)m $$
+- Podemos ver que $ m $ divide a $ a-b $, es decir, $ m|(a-b) $, lo cuál implica que $ a \equiv_m b $.
+
+## 40. Probar las siguientes propiedades para todo a, b, c ∈ Z:
+
+### (a) $ a ≡_n a $
+
+Esta propiedad indica que todo $ a \in \Z $ es congruente consimo mismo módulo $ n $, lo cuál es cierto ya que la relación de congruencia módulo $ n $ es equivalente y por lo tanto reflexiva.
+
+### (b) $ a ≡_n b ⇒ b ≡_n a $
+
+La relación de congruencia módulo $ n $ es una relación de equivalencia, por lo tanto se cumple la simetría ($ a \equiv_n b \to b \equiv_n a $)
+Si $ a \equiv_n b $ entonces $ n|(a-b) $, esto implica que:
+$$ a-b = -(b-a) $$
+- Dado que $ n $ también divide a $ b - a $ (porque si $ n $ divide a $ x $, también divide a $ -x $), entonces se da que $ b \equiv_n a $.
+
+### (c) $ a ≡_n b \land b ≡_n c ⇒ a ≡_n c $
+
+De nuevo, la relación de congruencia módulo $ n $ es una relación de equivalencia, por lo tanto se cumple la transitividad en ella.
+- $ a \equiv_n b \to n|(a-b) $.
+- $ b \equiv_n c \to n|(b-c) $.
+- Si sumamos ambas igualdades:
+$$ (a-b)+(b-c) = a - c $$
+- Por lo tanto $ n $ divide a $ a - c $, es decir, $ a \equiv_n c $.
+
+### (d) $ a ≡_n b ⇔ a + c ≡_n b + c $
+
+Partiendo de que $ a \equiv_n b $:
+$$ a \equiv_n b \to n|(a-b) \to a-b = k * n $$
+- Para un $ k \in \Z $.
+- Si sumo $ c $ a ambos lados:
+$$ (a+c) - (b+c) = a-b = kn $$
+- Es decir, $ n $ divide a $ (a+c) - (b+c) $, lo que implica que $ a + c \equiv_n b + c $.
+Partiendo de que $ a+c \equiv_n b+c $:
+- Es decir que $ n $ divide a $ (a+c) - (b+c) = a-b $
+- Lo que quiere decir que $ n|(a-b) \to a \equiv_n b $.
+
+Se demostró que la propiedad es válida en ambas direcciones.
+
+### (e) $ a ≡_n b ⇒ ac ≡_n bc $
+
+Si $ a \equiv_n b $, tenemos que $ n|(a-b) $ y que $ a-b = kn $ para un $ k \in \Z $.
+- Si multiplicamos $ c $ a ambos lados:
+$$ ac - bc = c(a-b) = c(kn) $$
+- Entonces, $ n $ divide a $ ac - bc $, lo que implica que $ ac \equiv_n bc $.
+
+### (f) $ a ≡_n b ⇒ (a, n) = (b, n) $
+
+La notación $ (a,n) $ y $ (b,n) $ represetan el MCD entre ambos valores.
+- Si $ a \equiv_n b $, es decir $ n|(a-b) $, lo que significa que $ a - b = kn $ para un $ k \in \Z $.
+- Si sumamos $ b $ a ambos lados de la igualdad:
+$$ a = b + kn $$
+- Usando la identidad de Bezout
+$$ (a,n) = am + nt $$
+- Si reemplazamos $ a $ por $ b+kn $:
+$$ (a,n) = am + nt = (b+kn)m + nt = mb+mkn+nt = n(kn+t) + mb = nd + mb = (b,n) $$
+  - Con $ d = kn+t $ y $ m \in \Z $.
+
+### (g) $ a ≡_n 0 ⇔ n|a $
